@@ -1,14 +1,22 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Xtremefarmbot</title>
+    <title>XtremeFarmBot</title>
     <%= csrf_meta_tags %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+
+    <!--Import Google Icon Font-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+
+
   </head>
 
   <body>
-    <%= yield %>
+  	<div class="container">
+    	<%= yield %>
+    </div>
   </body>
 </html>

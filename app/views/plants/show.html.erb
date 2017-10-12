@@ -1,4 +1,44 @@
 <p id="notice"><%= notice %></p>
 
+<h2>Checking Out Plant</h2>
+<table>
+  <thead>
+    <tr>
+        <th>Plant Data</th>
+    </tr>
+  </thead>
+
+  <tbody>
+      <tr>
+        <td>Name: <%= @plant.name %></td>
+      </tr>
+      <tr>
+        <td>Soil Moisture: <%= @plant.soil_moisture %></td>
+      </tr>
+      <tr>
+        <td>Magnesium: <%= @plant.magnesium %></td>
+      </tr>
+      <tr>
+        <td>Potassium: <%= @plant.potassium %></td>
+      </tr>
+      <tr>
+        <td>Iron: <%= @plant.iron %></td>
+      </tr>
+      <tr>
+        <td>Temperature: <%= @plant.temperature %></td>
+      </tr>
+      <tr>
+        <td>Humidity: <%= @plant.humidity %></td>
+      </tr>
+      <tr>
+        <td>Hours of Light: <%= @plant.hours_of_light %></td>
+      </tr>
+      <tr>
+        <td>Growth Time: <%= @plant.growth_time %></td>
+      </tr>
+  </tbody>
+</table>
+
+<br>
 <%= link_to 'Edit', edit_plant_path(@plant) %> |
-<%= link_to 'Back', plants_path %>
+<%= link_to '« Back', plants_path %>

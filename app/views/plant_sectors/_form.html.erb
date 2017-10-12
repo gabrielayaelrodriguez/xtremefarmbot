@@ -15,14 +15,11 @@
 
   <% end %>
 
-  Seleccione la Planta ke desea plantar:
+  <h4>Sector is going to take care of:</h4>
 
-    <%= form.select :plant_id, Plant.all.collect { |p| [ p.name, p.id ] }, include_blank: true %>
-
-    <br><br>
-    SI NO KERES ESA AGREGA OTRA AKA
-
-    <%= link_to 'otra planta', new_plant_path %>
+    <%= form.select :plant_id, Plant.all.collect { |p| [ p.name, p.id ] }, {}, class: 'browser-default' %>
+    <%= link_to 'Add New Plant Type', new_plant_path %>
+    <br>
 
 
   <div class="actions">

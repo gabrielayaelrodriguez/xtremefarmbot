@@ -69,6 +69,6 @@ class PlantsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def plant_params
-      params.require(:plant).permit(:name, :magnesium, :potassium, :iron, :temperature, :humidity, :hours_of_light, :growth_time)
+      params.require(:plant).permit(:name, :magnesium, :potassium, :iron, :temperature, :humidity, :hours_of_light, :growth_time, :soil_moisture)
     end
 end

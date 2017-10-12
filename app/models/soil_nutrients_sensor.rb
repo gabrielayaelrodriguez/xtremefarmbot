@@ -3,9 +3,9 @@ class SoilNutrientsSensor
 	def self.sense(sector)
 		
 		{
-			:magnesium => rand(0..1000),
-			:potassium => rand(0..1000),
-			:iron => rand(0..1000)
+			:magnesium => sector.magnesium,
+			:potassium => sector.potassium,
+			:iron => sector.iron
 		}
 	end
 end

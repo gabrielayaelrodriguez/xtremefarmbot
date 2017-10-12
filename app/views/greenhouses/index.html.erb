@@ -1,59 +1,90 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Greenhouse!</h1>
+<h3>Greenhouse Control Panel</h3>
 
+<div class="container">
+<%= link_to 'Work, Bot!', greenhouse_work_path, class: "btn waves-effect waves-light orange" %>
+<%= link_to 'Make Days Pass By', greenhouse_environment_aging_path, class: "btn waves-effect waves-light orange" %>
+<br><br>
+  <%= link_to 'Add Plant Sector', new_greenhouse_plant_sector_path, class: "btn waves-effect waves-light brown" %> 
+  <%= link_to 'Plants', plants_path, class: "btn waves-effect waves-light brown" %>
+</div>
 
-<%= @greenhouse.id %>
-<%= @greenhouse.plant_sectors.count %>
-<%= link_to 'New Sector', new_greenhouse_plant_sector_path %>
+<h3>Greenhouse Sectors List</h3>
 
-<br><br><br><br>
-
-<%= link_to 'TRABAJAR', greenhouse_work_path %>
-<%= link_to 'AGING', greenhouse_environment_aging_path %>
-
-
-<h1>Listing Sectors</h1>
- 
-<table>
-  <tr>
-    <th>ID</th>
-    <th>NAME</th>
-    <th>ELAPSED TIME</th>
-    <th>SOIL MOISTURE</th>
-    <th>SOIL MAGNESIUM</th>
-    <th>SOIL POTASSIUM</th>
-    <th>SOIL IRON</th>
-  </tr>
- 
 <% @greenhouse.plant_sectors.each do |plant_sector| %>
-  <tr>
-    <td><%= plant_sector.id %></td>
-    <td><%= plant_sector.plant.name %></td>
+<div class="container">
+  <h5> Sector Number <%= plant_sector.id%> is taking care of <%= plant_sector.plant.name %> </h5>
 
-    <td><%= plant_sector.elapsed_time %></td>
-    <td><%= plant_sector.moisture %></td>
-    <td><%= plant_sector.magnesium %></td>
-    <td><%= plant_sector.potassium %></td>
-    <td><%= plant_sector.iron %></td>
+  <%= link_to "Edit Sector", edit_greenhouse_plant_sector_path(plant_sector) %> | 
+  <%= link_to "Remove Sector", greenhouse_plant_sector_path(plant_sector), method: :delete, data: { confirm: "Are you sure?"} %>
+  <table class="striped">
+    <thead>
+      <tr>
+          <th>Sector Data</th>
+          <th>Plant Data</th>
+      </tr>
+    </thead>
 
-    <td><%= link_to 'edit', edit_greenhouse_plant_sector_path(plant_sector) %></td>
-    <td><%= link_to "Remove", greenhouse_plant_sector_path(plant_sector), method: :delete, data: { confirm: "Are you sure?"} %></td>
+    <tbody>
+      <tr>
+        <td>Seeded: <%= plant_sector.elapsed_time %> days ago </td>
+        <td>Growth Time: <%= plant_sector.plant.growth_time %> days</td>
+      </tr>
+      <tr>
+        <td>Soil Moisture: <%= plant_sector.moisture %></td>
+        <td>Needed: <%= plant_sector.plant.soil_moisture %></td>
+      </tr>
+      <tr>
+        <td>Soil Magnesium: <%= plant_sector.magnesium %></td>
+        <td>Needed: <%= plant_sector.plant.magnesium %></td>
+      </tr>
+      <tr>
+        <td>Soil Potassium: <%= plant_sector.potassium %></td>
+        <td>Needed: <%= plant_sector.plant.potassium %></td>
+      </tr>
+      <tr>
+        <td>Soil Iron: <%= plant_sector.iron %></td>
+        <td>Needed: <%= plant_sector.plant.iron %></td>
+      </tr>
+    </tbody>
+  </table>
 
-  </tr>
+
+</div>
+
+
+  
+
 <% end %>
-</table>
+
 <br>
 
-
-<% @action_entries.each do |action| %>
-  <br>
-  <%= action.description %>
-  <%= action.created_at %>
-  <br>
-<% end %>
+<h2>Actions History</h2>
+<div id="" style="overflow-y: scroll; height:200px;">
 
 
+<table>
+    <thead>
+      <tr>
+          <th>Date</th>
+          <th>Description</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @action_entries.each do |action| %>
+        <tr>
+          <td><%= action.created_at %></td>
+          <td><%= action.description %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+
+  
+
+</div>
 <br>
 
 

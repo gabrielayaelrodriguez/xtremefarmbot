@@ -46,13 +46,13 @@ class XtremeFarmBotController < ApplicationController
 				nutrients = SoilNutrientsSensor.sense(sector)
 
 				if (nutrients[:magnesium] < sector.plant.magnesium)
-					needed.push({:magnesium => sector.plant.magnesium - nutrients[:magnesium]})
+					needed.push({:magnesium => sector.plant.magnesium})
 				end
 				if (nutrients[:potassium] < sector.plant.potassium)
-					needed.push({:potassium => sector.plant.potassium - nutrients[:potassium]})
+					needed.push({:potassium => sector.plant.potassium})
 				end
 				if (nutrients[:iron] < sector.plant.iron)
-					needed.push({:iron => sector.plant.iron - nutrients[:iron]})
+					needed.push({:iron => sector.plant.iron})
 				end
 				NutrientsIrrigation.irrigate(sector, needed) unless needed.empty?
 				
