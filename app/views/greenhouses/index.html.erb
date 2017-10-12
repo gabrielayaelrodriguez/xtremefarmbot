@@ -1,0 +1,61 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Greenhouse!</h1>
+
+
+<%= @greenhouse.id %>
+<%= @greenhouse.plant_sectors.count %>
+<%= link_to 'New Sector', new_greenhouse_plant_sector_path %>
+
+<br><br><br><br>
+
+<%= link_to 'TRABAJAR', greenhouse_work_path %>
+<%= link_to 'AGING', greenhouse_environment_aging_path %>
+
+
+<h1>Listing Sectors</h1>
+ 
+<table>
+  <tr>
+    <th>ID</th>
+    <th>NAME</th>
+    <th>ELAPSED TIME</th>
+    <th>SOIL MOISTURE</th>
+    <th>SOIL MAGNESIUM</th>
+    <th>SOIL POTASSIUM</th>
+    <th>SOIL IRON</th>
+  </tr>
+ 
+<% @greenhouse.plant_sectors.each do |plant_sector| %>
+  <tr>
+    <td><%= plant_sector.id %></td>
+    <td><%= plant_sector.plant.name %></td>
+
+    <td><%= plant_sector.elapsed_time %></td>
+    <td><%= plant_sector.moisture %></td>
+    <td><%= plant_sector.magnesium %></td>
+    <td><%= plant_sector.potassium %></td>
+    <td><%= plant_sector.iron %></td>
+
+    <td><%= link_to 'edit', edit_greenhouse_plant_sector_path(plant_sector) %></td>
+    <td><%= link_to "Remove", greenhouse_plant_sector_path(plant_sector), method: :delete, data: { confirm: "Are you sure?"} %></td>
+
+  </tr>
+<% end %>
+</table>
+<br>
+
+
+<% @action_entries.each do |action| %>
+  <br>
+  <%= action.description %>
+  <%= action.created_at %>
+  <br>
+<% end %>
+
+
+<br>
+
+
+
+

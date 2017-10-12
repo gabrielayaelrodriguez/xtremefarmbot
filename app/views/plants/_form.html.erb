@@ -1,0 +1,62 @@
+<%= form_with(model: plant, local: true) do |form| %>
+  <% if plant.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(plant.errors.count, "error") %> prohibited this plant from being saved:</h2>
+
+      <ul>
+      <% plant.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+<div class="field">
+    <%= form.label :name %><br />
+    <%= form.text_field :name %>
+</div>
+
+<div class="field">
+    <%= form.label :soil_moisture %><br />
+    <%= form.text_field :soil_moisture %>
+</div>
+
+<div class="field">
+    <%= form.label :magnesium %><br />
+    <%= form.text_field :magnesium %>
+</div>
+
+<div class="field">
+    <%= form.label :potassium %><br />
+    <%= form.text_field :potassium %>
+</div>
+
+<div class="field">
+    <%= form.label :iron %><br />
+    <%= form.text_field :iron %>
+</div>
+
+<div class="field">
+    <%= form.label :temperature %><br />
+    <%= form.text_field :temperature %>
+</div>
+
+<div class="field">
+    <%= form.label :humidity %><br />
+    <%= form.text_field :humidity %>
+</div>
+
+<div class="field">
+    <%= form.label :hours_of_light %><br />
+    <%= form.text_field :hours_of_light %>
+</div>
+
+<div class="field">
+    <%= form.label :growth_time %><br />
+    <%= form.text_field :growth_time %>
+</div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

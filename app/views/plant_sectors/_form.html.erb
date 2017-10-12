@@ -1,0 +1,31 @@
+<%= form_with(model: [@greenhouse, plant_sector], local: true) do |form| %>
+  <% if plant_sector.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(plant_sector.errors.count, "error") %> prohibited this plant_sector from being saved:</h2>
+
+      <ul>
+      <% plant_sector.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+
+
+    
+
+  <% end %>
+
+  Seleccione la Planta ke desea plantar:
+
+    <%= form.select :plant_id, Plant.all.collect { |p| [ p.name, p.id ] }, include_blank: true %>
+
+    <br><br>
+    SI NO KERES ESA AGREGA OTRA AKA
+
+    <%= link_to 'otra planta', new_plant_path %>
+
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
