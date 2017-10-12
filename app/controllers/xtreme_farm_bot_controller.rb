@@ -81,17 +81,18 @@ class XtremeFarmBotController < ApplicationController
 
 
 
-		def environment_aging
-			PlantSector.all.each do | sector |
-				sector.update(:elapsed_time => sector.elapsed_time + 1,
-							  :moisture => sector.moisture - rand(0..sector.moisture),
-							  :magnesium => sector.magnesium - rand(0..sector.magnesium),
-							  :potassium => sector.potassium - rand(0..sector.potassium),
-							  :iron => sector.iron - rand(0..sector.iron)
-							  )
+	def environment_aging
+		PlantSector.all.each do | sector |
+			sector.update(:elapsed_time => sector.elapsed_time + 1,
+						  :moisture => sector.moisture - rand(0..sector.moisture),
+						  :magnesium => sector.magnesium - rand(0..sector.magnesium),
+						  :potassium => sector.potassium - rand(0..sector.potassium),
+						  :iron => sector.iron - rand(0..sector.iron)
+						  )
 
-			end
-			redirect_to root_path
 		end
+		redirect_to root_path
+	end
+	
 end
 

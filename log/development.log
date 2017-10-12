@@ -22465,3 +22465,2460 @@ Processing by GreenhousesController#index as HTML
 Completed 200 OK in 116ms (Views: 100.0ms | ActiveRecord: 3.1ms)
 
 
+  [1m[35mSQL (3.1ms)[0m  [1m[31mDELETE FROM "action_entries"[0m
+  [1m[36mActionEntry Load (0.4ms)[0m  [1m[34mSELECT  "action_entries".* FROM "action_entries" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mPlant Load (0.7ms)[0m  [1m[34mSELECT  "plants".* FROM "plants" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[35mSQL (3.9ms)[0m  [1m[31mDELETE FROM "plants"[0m
+  [1m[35mSQL (2.3ms)[0m  [1m[31mDELETE FROM "greenhouses"[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "greenhouses" ("created_at", "updated_at") VALUES (?, ?)[0m  [["created_at", "2017-10-12 22:37:37.565436"], ["updated_at", "2017-10-12 22:37:37.565436"]]
+  [1m[35m (1.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPlant Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "plants" WHERE "plants"."name" = ? LIMIT ?[0m  [["name", "Lechuga"], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "plants" ("name", "soil_moisture", "magnesium", "potassium", "iron", "temperature", "humidity", "hours_of_light", "growth_time", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Lechuga"], ["soil_moisture", 40], ["magnesium", 500], ["potassium", 500], ["iron", 500], ["temperature", 40], ["humidity", 40], ["hours_of_light", 10], ["growth_time", 40], ["created_at", "2017-10-12 22:37:37.584013"], ["updated_at", "2017-10-12 22:37:37.584013"]]
+  [1m[35m (1.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPlant Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "plants" WHERE "plants"."name" = ? LIMIT ?[0m  [["name", "Espinaca"], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "plants" ("name", "soil_moisture", "magnesium", "potassium", "iron", "temperature", "humidity", "hours_of_light", "growth_time", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Espinaca"], ["soil_moisture", 30], ["magnesium", 300], ["potassium", 300], ["iron", 300], ["temperature", 30], ["humidity", 50], ["hours_of_light", 10], ["growth_time", 20], ["created_at", "2017-10-12 22:37:37.588890"], ["updated_at", "2017-10-12 22:37:37.588890"]]
+  [1m[35m (1.7ms)[0m  [1m[36mcommit transaction[0m
+Started GET "/" for 127.0.0.1 at 2017-10-12 19:37:42 -0300
+Processing by GreenhousesController#index as HTML
+  [1m[36mGreenhouse Load (0.1ms)[0m  [1m[34mSELECT  "greenhouses".* FROM "greenhouses" ORDER BY "greenhouses"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  Rendering greenhouses/index.html.erb within layouts/application
+  [1m[36mPlantSector Load (0.1ms)[0m  [1m[34mSELECT "plant_sectors".* FROM "plant_sectors" WHERE "plant_sectors"."greenhouse_id" = ?[0m  [["greenhouse_id", 2]]
+  [1m[36mActionEntry Load (0.1ms)[0m  [1m[34mSELECT "action_entries".* FROM "action_entries"[0m
+  Rendered greenhouses/index.html.erb within layouts/application (7.7ms)
+Completed 200 OK in 3089ms (Views: 3074.0ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/greenhouse/plant_sectors/new" for 127.0.0.1 at 2017-10-12 19:37:52 -0300
+Processing by PlantSectorsController#new as HTML
+  [1m[36mGreenhouse Load (0.2ms)[0m  [1m[34mSELECT  "greenhouses".* FROM "greenhouses" ORDER BY "greenhouses"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  Rendering plant_sectors/new.html.erb within layouts/application
+  [1m[36mPlant Load (0.3ms)[0m  [1m[34mSELECT "plants".* FROM "plants"[0m
+  Rendered plant_sectors/_form.html.erb (15.6ms)
+  Rendered plant_sectors/new.html.erb within layouts/application (17.3ms)
+Completed 200 OK in 79ms (Views: 65.6ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/greenhouse/plant_sectors/new" for 127.0.0.1 at 2017-10-12 19:39:00 -0300
+Processing by PlantSectorsController#new as HTML
+  [1m[36mGreenhouse Load (0.2ms)[0m  [1m[34mSELECT  "greenhouses".* FROM "greenhouses" ORDER BY "greenhouses"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  Rendering plant_sectors/new.html.erb within layouts/application
+  [1m[36mPlant Load (0.2ms)[0m  [1m[34mSELECT "plants".* FROM "plants"[0m
+  Rendered plant_sectors/_form.html.erb (2.0ms)
+  Rendered plant_sectors/new.html.erb within layouts/application (3.4ms)
+Completed 200 OK in 91ms (Views: 87.0ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/greenhouse/plant_sectors/new" for 127.0.0.1 at 2017-10-12 19:39:14 -0300
+Processing by PlantSectorsController#new as HTML
+  [1m[36mGreenhouse Load (0.2ms)[0m  [1m[34mSELECT  "greenhouses".* FROM "greenhouses" ORDER BY "greenhouses"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  Rendering plant_sectors/new.html.erb within layouts/application
+  [1m[36mPlant Load (0.2ms)[0m  [1m[34mSELECT "plants".* FROM "plants"[0m
+  Rendered plant_sectors/_form.html.erb (3.1ms)
+  Rendered plant_sectors/new.html.erb within layouts/application (4.6ms)
+Completed 200 OK in 100ms (Views: 95.7ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/greenhouse/plant_sectors/new" for 127.0.0.1 at 2017-10-12 19:39:24 -0300
+Processing by PlantSectorsController#new as HTML
+  [1m[36mGreenhouse Load (0.2ms)[0m  [1m[34mSELECT  "greenhouses".* FROM "greenhouses" ORDER BY "greenhouses"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  Rendering plant_sectors/new.html.erb within layouts/application
+  [1m[36mPlant Load (0.2ms)[0m  [1m[34mSELECT "plants".* FROM "plants"[0m
+  Rendered plant_sectors/_form.html.erb (3.0ms)
+  Rendered plant_sectors/new.html.erb within layouts/application (4.6ms)
+Completed 200 OK in 86ms (Views: 82.3ms | ActiveRecord: 0.5ms)
+
+
+Started POST "/greenhouse/plant_sectors" for 127.0.0.1 at 2017-10-12 19:39:30 -0300
+Processing by PlantSectorsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"BLWGov39Rg/+VVhupvbwEAq9KrCLfxhu3hH1ppkBQ9OYoRvvW/+g5gEWJOM35XjdjK4J/VQmn7NWFFMcuDFy9A==", "plant_sector"=>{"plant_id"=>"4"}, "commit"=>"Create Plant sector"}
+  [1m[36mGreenhouse Load (0.2ms)[0m  [1m[34mSELECT  "greenhouses".* FROM "greenhouses" ORDER BY "greenhouses"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPlant Load (0.2ms)[0m  [1m[34mSELECT  "plants".* FROM "plants" WHERE "plants"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "plant_sectors" ("created_at", "updated_at", "plant_id", "greenhouse_id") VALUES (?, ?, ?, ?)[0m  [["created_at", "2017-10-12 22:39:30.242993"], ["updated_at", "2017-10-12 22:39:30.242993"], ["plant_id", 4], ["greenhouse_id", 2]]
+  [1m[35m (1.8ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 9ms (ActiveRecord: 2.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-10-12 19:39:30 -0300
+Processing by GreenhousesController#index as HTML
+  [1m[36mGreenhouse Load (0.2ms)[0m  [1m[34mSELECT  "greenhouses".* FROM "greenhouses" ORDER BY "greenhouses"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  Rendering greenhouses/index.html.erb within layouts/application
+  [1m[36mPlantSector Load (0.1ms)[0m  [1m[34mSELECT "plant_sectors".* FROM "plant_sectors" WHERE "plant_sectors"."greenhouse_id" = ?[0m  [["greenhouse_id", 2]]
+  [1m[36mPlant Load (0.2ms)[0m  [1m[34mSELECT  "plants".* FROM "plants" WHERE "plants"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mActionEntry Load (0.3ms)[0m  [1m[34mSELECT "action_entries".* FROM "action_entries"[0m
+  Rendered greenhouses/index.html.erb within layouts/application (5.2ms)
+Completed 200 OK in 64ms (Views: 60.8ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/greenhouse/plant_sectors/2/edit" for 127.0.0.1 at 2017-10-12 19:39:45 -0300
+Processing by PlantSectorsController#edit as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mPlantSector Load (0.4ms)[0m  [1m[34mSELECT  "plant_sectors".* FROM "plant_sectors" WHERE "plant_sectors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mGreenhouse Load (0.3ms)[0m  [1m[34mSELECT  "greenhouses".* FROM "greenhouses" ORDER BY "greenhouses"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  Rendering plant_sectors/edit.html.erb within layouts/application
+  [1m[36mPlant Load (0.2ms)[0m  [1m[34mSELECT "plants".* FROM "plants"[0m
+  Rendered plant_sectors/_form.html.erb (2.5ms)
+  Rendered plant_sectors/edit.html.erb within layouts/application (4.2ms)
+Completed 200 OK in 74ms (Views: 65.6ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-10-12 19:44:32 -0300
+Processing by GreenhousesController#index as HTML
+  [1m[36mGreenhouse Load (0.2ms)[0m  [1m[34mSELECT  "greenhouses".* FROM "greenhouses" ORDER BY "greenhouses"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  Rendering greenhouses/index.html.erb within layouts/application
+  [1m[36mPlantSector Load (0.2ms)[0m  [1m[34mSELECT "plant_sectors".* FROM "plant_sectors" WHERE "plant_sectors"."greenhouse_id" = ?[0m  [["greenhouse_id", 2]]
+  [1m[36mPlant Load (0.2ms)[0m  [1m[34mSELECT  "plants".* FROM "plants" WHERE "plants"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mActionEntry Load (0.2ms)[0m  [1m[34mSELECT "action_entries".* FROM "action_entries"[0m
+  Rendered greenhouses/index.html.erb within layouts/application (40.8ms)
+Completed 200 OK in 129ms (Views: 112.8ms | ActiveRecord: 3.7ms)
+
+
+Started GET "/greenhouse/environment_aging" for 127.0.0.1 at 2017-10-12 19:44:36 -0300
+Processing by XtremeFarmBotController#environment_aging as HTML
+  [1m[36mPlantSector Load (0.3ms)[0m  [1m[34mSELECT "plant_sectors".* FROM "plant_sectors"[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPlant Load (0.1ms)[0m  [1m[34mSELECT  "plants".* FROM "plants" WHERE "plants"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPlant Load (0.1ms)[0m  [1m[34mSELECT  "plants".* FROM "plants" WHERE "plants"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[33mUPDATE "plant_sectors" SET "moisture" = ?, "magnesium" = ?, "potassium" = ?, "iron" = ?, "updated_at" = ? WHERE "plant_sectors"."id" = ?[0m  [["moisture", 1], ["magnesium", 143], ["potassium", 275], ["iron", 281], ["updated_at", "2017-10-12 22:44:36.804408"], ["id", 2]]
+  [1m[35m (1.6ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 13ms (ActiveRecord: 2.8ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-10-12 19:44:36 -0300
+Processing by GreenhousesController#index as HTML
+  [1m[36mGreenhouse Load (0.3ms)[0m  [1m[34mSELECT  "greenhouses".* FROM "greenhouses" ORDER BY "greenhouses"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  Rendering greenhouses/index.html.erb within layouts/application
+  [1m[36mPlantSector Load (0.1ms)[0m  [1m[34mSELECT "plant_sectors".* FROM "plant_sectors" WHERE "plant_sectors"."greenhouse_id" = ?[0m  [["greenhouse_id", 2]]
+  [1m[36mPlant Load (0.1ms)[0m  [1m[34mSELECT  "plants".* FROM "plants" WHERE "plants"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mActionEntry Load (0.1ms)[0m  [1m[34mSELECT "action_entries".* FROM "action_entries"[0m
+  Rendered greenhouses/index.html.erb within layouts/application (4.5ms)
+Completed 200 OK in 73ms (Views: 69.7ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/greenhouse/environment_aging" for 127.0.0.1 at 2017-10-12 19:44:38 -0300
+Processing by XtremeFarmBotController#environment_aging as HTML
+  [1m[36mPlantSector Load (0.5ms)[0m  [1m[34mSELECT "plant_sectors".* FROM "plant_sectors"[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPlant Load (0.1ms)[0m  [1m[34mSELECT  "plants".* FROM "plants" WHERE "plants"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPlant Load (0.1ms)[0m  [1m[34mSELECT  "plants".* FROM "plants" WHERE "plants"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[33mUPDATE "plant_sectors" SET "magnesium" = ?, "potassium" = ?, "iron" = ?, "updated_at" = ? WHERE "plant_sectors"."id" = ?[0m  [["magnesium", 18], ["potassium", 210], ["iron", 87], ["updated_at", "2017-10-12 22:44:38.469528"], ["id", 2]]
+  [1m[35m (1.6ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 13ms (ActiveRecord: 2.8ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-10-12 19:44:38 -0300
+Processing by GreenhousesController#index as HTML
+  [1m[36mGreenhouse Load (0.2ms)[0m  [1m[34mSELECT  "greenhouses".* FROM "greenhouses" ORDER BY "greenhouses"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  Rendering greenhouses/index.html.erb within layouts/application
+  [1m[36mPlantSector Load (0.2ms)[0m  [1m[34mSELECT "plant_sectors".* FROM "plant_sectors" WHERE "plant_sectors"."greenhouse_id" = ?[0m  [["greenhouse_id", 2]]
+  [1m[36mPlant Load (0.3ms)[0m  [1m[34mSELECT  "plants".* FROM "plants" WHERE "plants"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mActionEntry Load (0.2ms)[0m  [1m[34mSELECT "action_entries".* FROM "action_entries"[0m
+  Rendered greenhouses/index.html.erb within layouts/application (6.7ms)
+Completed 200 OK in 83ms (Views: 80.1ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/greenhouse/environment_aging" for 127.0.0.1 at 2017-10-12 19:44:40 -0300
+Processing by XtremeFarmBotController#environment_aging as HTML
+  [1m[36mPlantSector Load (0.4ms)[0m  [1m[34mSELECT "plant_sectors".* FROM "plant_sectors"[0m
+  [1m[35m (0.3ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPlant Load (0.2ms)[0m  [1m[34mSELECT  "plants".* FROM "plants" WHERE "plants"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPlant Load (0.1ms)[0m  [1m[34mSELECT  "plants".* FROM "plants" WHERE "plants"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[33mUPDATE "plant_sectors" SET "moisture" = ?, "magnesium" = ?, "potassium" = ?, "iron" = ?, "updated_at" = ? WHERE "plant_sectors"."id" = ?[0m  [["moisture", 0], ["magnesium", 15], ["potassium", 123], ["iron", 29], ["updated_at", "2017-10-12 22:44:40.051440"], ["id", 2]]
+  [1m[35m (1.9ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 17ms (ActiveRecord: 3.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-10-12 19:44:40 -0300
+Processing by GreenhousesController#index as HTML
+  [1m[36mGreenhouse Load (0.3ms)[0m  [1m[34mSELECT  "greenhouses".* FROM "greenhouses" ORDER BY "greenhouses"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  Rendering greenhouses/index.html.erb within layouts/application
+  [1m[36mPlantSector Load (0.2ms)[0m  [1m[34mSELECT "plant_sectors".* FROM "plant_sectors" WHERE "plant_sectors"."greenhouse_id" = ?[0m  [["greenhouse_id", 2]]
+  [1m[36mPlant Load (0.2ms)[0m  [1m[34mSELECT  "plants".* FROM "plants" WHERE "plants"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mActionEntry Load (0.2ms)[0m  [1m[34mSELECT "action_entries".* FROM "action_entries"[0m
+  Rendered greenhouses/index.html.erb within layouts/application (7.8ms)
+Completed 200 OK in 82ms (Views: 76.5ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/greenhouse/environment_aging" for 127.0.0.1 at 2017-10-12 19:46:46 -0300
+Processing by XtremeFarmBotController#environment_aging as HTML
+  [1m[36mPlantSector Load (0.1ms)[0m  [1m[34mSELECT "plant_sectors".* FROM "plant_sectors"[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPlant Load (0.1ms)[0m  [1m[34mSELECT  "plants".* FROM "plants" WHERE "plants"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPlant Load (0.1ms)[0m  [1m[34mSELECT  "plants".* FROM "plants" WHERE "plants"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[33mUPDATE "plant_sectors" SET "magnesium" = ?, "potassium" = ?, "iron" = ?, "updated_at" = ? WHERE "plant_sectors"."id" = ?[0m  [["magnesium", 6], ["potassium", 102], ["iron", 15], ["updated_at", "2017-10-12 22:46:46.966014"], ["id", 2]]
+  [1m[35m (1.5ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 43ms (ActiveRecord: 3.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-10-12 19:46:46 -0300
+Processing by GreenhousesController#index as HTML
+  [1m[36mGreenhouse Load (0.1ms)[0m  [1m[34mSELECT  "greenhouses".* FROM "greenhouses" ORDER BY "greenhouses"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  Rendering greenhouses/index.html.erb within layouts/application
+  [1m[36mPlantSector Load (0.2ms)[0m  [1m[34mSELECT "plant_sectors".* FROM "plant_sectors" WHERE "plant_sectors"."greenhouse_id" = ?[0m  [["greenhouse_id", 2]]
+  [1m[36mPlant Load (0.1ms)[0m  [1m[34mSELECT  "plants".* FROM "plants" WHERE "plants"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mActionEntry Load (0.1ms)[0m  [1m[34mSELECT "action_entries".* FROM "action_entries"[0m
+  Rendered greenhouses/index.html.erb within layouts/application (7.4ms)
+Completed 200 OK in 87ms (Views: 73.2ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/greenhouse/environment_aging" for 127.0.0.1 at 2017-10-12 19:46:52 -0300
+Processing by XtremeFarmBotController#environment_aging as HTML
+  [1m[36mPlantSector Load (0.3ms)[0m  [1m[34mSELECT "plant_sectors".* FROM "plant_sectors"[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPlant Load (0.2ms)[0m  [1m[34mSELECT  "plants".* FROM "plants" WHERE "plants"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPlant Load (0.1ms)[0m  [1m[34mSELECT  "plants".* FROM "plants" WHERE "plants"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[33mUPDATE "plant_sectors" SET "magnesium" = ?, "potassium" = ?, "iron" = ?, "updated_at" = ? WHERE "plant_sectors"."id" = ?[0m  [["magnesium", 5], ["potassium", 74], ["iron", 1], ["updated_at", "2017-10-12 22:46:52.742129"], ["id", 2]]
+  [1m[35m (1.8ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 54ms (ActiveRecord: 4.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-10-12 19:46:52 -0300
+Processing by GreenhousesController#index as HTML
+  [1m[36mGreenhouse Load (0.1ms)[0m  [1m[34mSELECT  "greenhouses".* FROM "greenhouses" ORDER BY "greenhouses"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  Rendering greenhouses/index.html.erb within layouts/application
+  [1m[36mPlantSector Load (0.2ms)[0m  [1m[34mSELECT "plant_sectors".* FROM "plant_sectors" WHERE "plant_sectors"."greenhouse_id" = ?[0m  [["greenhouse_id", 2]]
+  [1m[36mPlant Load (0.1ms)[0m  [1m[34mSELECT  "plants".* FROM "plants" WHERE "plants"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mActionEntry Load (0.1ms)[0m  [1m[34mSELECT "action_entries".* FROM "action_entries"[0m
+  Rendered greenhouses/index.html.erb within layouts/application (7.0ms)
+Completed 200 OK in 94ms (Views: 81.4ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-10-12 19:46:54 -0300
+Processing by GreenhousesController#index as HTML
+  [1m[36mGreenhouse Load (0.3ms)[0m  [1m[34mSELECT  "greenhouses".* FROM "greenhouses" ORDER BY "greenhouses"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  Rendering greenhouses/index.html.erb within layouts/application
+  [1m[36mPlantSector Load (0.1ms)[0m  [1m[34mSELECT "plant_sectors".* FROM "plant_sectors" WHERE "plant_sectors"."greenhouse_id" = ?[0m  [["greenhouse_id", 2]]
+  [1m[36mPlant Load (0.1ms)[0m  [1m[34mSELECT  "plants".* FROM "plants" WHERE "plants"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mActionEntry Load (0.1ms)[0m  [1m[34mSELECT "action_entries".* FROM "action_entries"[0m
+  Rendered greenhouses/index.html.erb within layouts/application (4.0ms)
+Completed 200 OK in 79ms (Views: 74.2ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/greenhouse/environment_aging" for 127.0.0.1 at 2017-10-12 19:46:55 -0300
+Processing by XtremeFarmBotController#environment_aging as HTML
+  [1m[36mPlantSector Load (1.0ms)[0m  [1m[34mSELECT "plant_sectors".* FROM "plant_sectors"[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPlant Load (0.2ms)[0m  [1m[34mSELECT  "plants".* FROM "plants" WHERE "plants"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPlant Load (0.1ms)[0m  [1m[34mSELECT  "plants".* FROM "plants" WHERE "plants"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[33mUPDATE "plant_sectors" SET "potassium" = ?, "iron" = ?, "updated_at" = ? WHERE "plant_sectors"."id" = ?[0m  [["potassium", 10], ["iron", 0], ["updated_at", "2017-10-12 22:46:55.719213"], ["id", 2]]
+  [1m[35m (1.5ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 13ms (ActiveRecord: 3.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-10-12 19:46:55 -0300
+Processing by GreenhousesController#index as HTML
+  [1m[36mGreenhouse Load (0.2ms)[0m  [1m[34mSELECT  "greenhouses".* FROM "greenhouses" ORDER BY "greenhouses"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  Rendering greenhouses/index.html.erb within layouts/application
+  [1m[36mPlantSector Load (0.1ms)[0m  [1m[34mSELECT "plant_sectors".* FROM "plant_sectors" WHERE "plant_sectors"."greenhouse_id" = ?[0m  [["greenhouse_id", 2]]
+  [1m[36mPlant Load (0.1ms)[0m  [1m[34mSELECT  "plants".* FROM "plants" WHERE "plants"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mActionEntry Load (0.1ms)[0m  [1m[34mSELECT "action_entries".* FROM "action_entries"[0m
+  Rendered greenhouses/index.html.erb within layouts/application (4.1ms)
+Completed 200 OK in 63ms (Views: 59.5ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/greenhouse/environment_aging" for 127.0.0.1 at 2017-10-12 19:46:56 -0300
+Processing by XtremeFarmBotController#environment_aging as HTML
+  [1m[36mPlantSector Load (0.3ms)[0m  [1m[34mSELECT "plant_sectors".* FROM "plant_sectors"[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPlant Load (0.1ms)[0m  [1m[34mSELECT  "plants".* FROM "plants" WHERE "plants"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPlant Load (0.1ms)[0m  [1m[34mSELECT  "plants".* FROM "plants" WHERE "plants"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[33mUPDATE "plant_sectors" SET "magnesium" = ?, "potassium" = ?, "updated_at" = ? WHERE "plant_sectors"."id" = ?[0m  [["magnesium", 4], ["potassium", 1], ["updated_at", "2017-10-12 22:46:56.731790"], ["id", 2]]
+  [1m[35m (1.8ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 11ms (ActiveRecord: 2.8ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-10-12 19:46:56 -0300
+Processing by GreenhousesController#index as HTML
+  [1m[36mGreenhouse Load (0.2ms)[0m  [1m[34mSELECT  "greenhouses".* FROM "greenhouses" ORDER BY "greenhouses"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  Rendering greenhouses/index.html.erb within layouts/application
+  [1m[36mPlantSector Load (0.1ms)[0m  [1m[34mSELECT "plant_sectors".* FROM "plant_sectors" WHERE "plant_sectors"."greenhouse_id" = ?[0m  [["greenhouse_id", 2]]
+  [1m[36mPlant Load (0.1ms)[0m  [1m[34mSELECT  "plants".* FROM "plants" WHERE "plants"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mActionEntry Load (0.1ms)[0m  [1m[34mSELECT "action_entries".* FROM "action_entries"[0m
+  Rendered greenhouses/index.html.erb within layouts/application (3.9ms)
+Completed 200 OK in 60ms (Views: 56.8ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/greenhouse/environment_aging" for 127.0.0.1 at 2017-10-12 19:46:58 -0300
+Processing by XtremeFarmBotController#environment_aging as HTML
+  [1m[36mPlantSector Load (0.4ms)[0m  [1m[34mSELECT "plant_sectors".* FROM "plant_sectors"[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPlant Load (0.2ms)[0m  [1m[34mSELECT  "plants".* FROM "plants" WHERE "plants"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPlant Load (0.2ms)[0m  [1m[34mSELECT  "plants".* FROM "plants" WHERE "plants"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[33mUPDATE "plant_sectors" SET "magnesium" = ?, "potassium" = ?, "updated_at" = ? WHERE "plant_sectors"."id" = ?[0m  [["magnesium", 0], ["potassium", 0], ["updated_at", "2017-10-12 22:46:58.082919"], ["id", 2]]
+  [1m[35m (1.9ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 18ms (ActiveRecord: 3.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-10-12 19:46:58 -0300
+Processing by GreenhousesController#index as HTML
+  [1m[36mGreenhouse Load (0.2ms)[0m  [1m[34mSELECT  "greenhouses".* FROM "greenhouses" ORDER BY "greenhouses"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  Rendering greenhouses/index.html.erb within layouts/application
+  [1m[36mPlantSector Load (0.1ms)[0m  [1m[34mSELECT "plant_sectors".* FROM "plant_sectors" WHERE "plant_sectors"."greenhouse_id" = ?[0m  [["greenhouse_id", 2]]
+  [1m[36mPlant Load (0.1ms)[0m  [1m[34mSELECT  "plants".* FROM "plants" WHERE "plants"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mActionEntry Load (0.2ms)[0m  [1m[34mSELECT "action_entries".* FROM "action_entries"[0m
+  Rendered greenhouses/index.html.erb within layouts/application (5.0ms)
+Completed 200 OK in 63ms (Views: 60.5ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/greenhouse/environment_aging" for 127.0.0.1 at 2017-10-12 19:47:10 -0300
+Processing by XtremeFarmBotController#environment_aging as HTML
+  [1m[36mPlantSector Load (0.1ms)[0m  [1m[34mSELECT "plant_sectors".* FROM "plant_sectors"[0m
+Completed 500 Internal Server Error in 242ms (ActiveRecord: 1.0ms)
+
+
+
+NameError - undefined local variable or method `gdg' for #<XtremeFarmBotController:0x00007fb2c9bd8688>:
+  app/controllers/xtreme_farm_bot_controller.rb:87:in `block in environment_aging'
+  activerecord (5.1.4) lib/active_record/relation/delegation.rb:39:in `each'
+  app/controllers/xtreme_farm_bot_controller.rb:85:in `environment_aging'
+  actionpack (5.1.4) lib/action_controller/metal/basic_implicit_render.rb:4:in `send_action'
+  actionpack (5.1.4) lib/abstract_controller/base.rb:186:in `process_action'
+  actionpack (5.1.4) lib/action_controller/metal/rendering.rb:30:in `process_action'
+  actionpack (5.1.4) lib/abstract_controller/callbacks.rb:20:in `block in process_action'
+  activesupport (5.1.4) lib/active_support/callbacks.rb:131:in `run_callbacks'
+  actionpack (5.1.4) lib/abstract_controller/callbacks.rb:19:in `process_action'
+  actionpack (5.1.4) lib/action_controller/metal/rescue.rb:20:in `process_action'
+  actionpack (5.1.4) lib/action_controller/metal/instrumentation.rb:32:in `block in process_action'
+  activesupport (5.1.4) lib/active_support/notifications.rb:166:in `block in instrument'
+  activesupport (5.1.4) lib/active_support/notifications/instrumenter.rb:21:in `instrument'
+  activesupport (5.1.4) lib/active_support/notifications.rb:166:in `instrument'
+  actionpack (5.1.4) lib/action_controller/metal/instrumentation.rb:30:in `process_action'
+  actionpack (5.1.4) lib/action_controller/metal/params_wrapper.rb:252:in `process_action'
+  activerecord (5.1.4) lib/active_record/railties/controller_runtime.rb:22:in `process_action'
+  actionpack (5.1.4) lib/abstract_controller/base.rb:124:in `process'
+  actionview (5.1.4) lib/action_view/rendering.rb:30:in `process'
+  actionpack (5.1.4) lib/action_controller/metal.rb:189:in `dispatch'
+  actionpack (5.1.4) lib/action_controller/metal.rb:253:in `dispatch'
+  actionpack (5.1.4) lib/action_dispatch/routing/route_set.rb:49:in `dispatch'
+  actionpack (5.1.4) lib/action_dispatch/routing/route_set.rb:31:in `serve'
+  actionpack (5.1.4) lib/action_dispatch/journey/router.rb:50:in `block in serve'
+  actionpack (5.1.4) lib/action_dispatch/journey/router.rb:33:in `serve'
+  actionpack (5.1.4) lib/action_dispatch/routing/route_set.rb:834:in `call'
+  rack (2.0.3) lib/rack/etag.rb:25:in `call'
+  rack (2.0.3) lib/rack/conditional_get.rb:25:in `call'
+  rack (2.0.3) lib/rack/head.rb:12:in `call'
+  rack (2.0.3) lib/rack/session/abstract/id.rb:232:in `context'
+  rack (2.0.3) lib/rack/session/abstract/id.rb:226:in `call'
+  actionpack (5.1.4) lib/action_dispatch/middleware/cookies.rb:613:in `call'
+  activerecord (5.1.4) lib/active_record/migration.rb:556:in `call'
+  actionpack (5.1.4) lib/action_dispatch/middleware/callbacks.rb:26:in `block in call'
+  activesupport (5.1.4) lib/active_support/callbacks.rb:97:in `run_callbacks'
+  actionpack (5.1.4) lib/action_dispatch/middleware/callbacks.rb:24:in `call'
+  actionpack (5.1.4) lib/action_dispatch/middleware/executor.rb:12:in `call'
+  better_errors (2.3.0) lib/better_errors/middleware.rb:84:in `protected_app_call'
+  better_errors (2.3.0) lib/better_errors/middleware.rb:79:in `better_errors_call'
+  better_errors (2.3.0) lib/better_errors/middleware.rb:57:in `call'
+  actionpack (5.1.4) lib/action_dispatch/middleware/debug_exceptions.rb:59:in `call'
+  web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+  web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+  web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+  actionpack (5.1.4) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+  railties (5.1.4) lib/rails/rack/logger.rb:36:in `call_app'
+  railties (5.1.4) lib/rails/rack/logger.rb:24:in `block in call'
+  activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+  activesupport (5.1.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `tagged'
+  railties (5.1.4) lib/rails/rack/logger.rb:24:in `call'
+  sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+  actionpack (5.1.4) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+  actionpack (5.1.4) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+  rack (2.0.3) lib/rack/method_override.rb:22:in `call'
+  rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+  activesupport (5.1.4) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+  actionpack (5.1.4) lib/action_dispatch/middleware/executor.rb:12:in `call'
+  actionpack (5.1.4) lib/action_dispatch/middleware/static.rb:125:in `call'
+  rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+  railties (5.1.4) lib/rails/engine.rb:522:in `call'
+  puma (3.10.0) lib/puma/configuration.rb:225:in `call'
+  puma (3.10.0) lib/puma/server.rb:605:in `handle_request'
+  puma (3.10.0) lib/puma/server.rb:437:in `process_client'
+  puma (3.10.0) lib/puma/server.rb:301:in `block in run'
+  puma (3.10.0) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+
+Started POST "/__better_errors/87ff064db04d2ad2/variables" for 127.0.0.1 at 2017-10-12 19:47:10 -0300
+Started POST "/__better_errors/87ff064db04d2ad2/eval" for 127.0.0.1 at 2017-10-12 19:47:24 -0300
+Started POST "/__better_errors/87ff064db04d2ad2/eval" for 127.0.0.1 at 2017-10-12 19:47:30 -0300
+Started GET "/greenhouse/environment_aging" for 127.0.0.1 at 2017-10-12 19:50:04 -0300
+Processing by XtremeFarmBotController#environment_aging as HTML
+  [1m[36mPlantSector Load (0.1ms)[0m  [1m[34mSELECT "plant_sectors".* FROM "plant_sectors"[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPlant Load (0.1ms)[0m  [1m[34mSELECT  "plants".* FROM "plants" WHERE "plants"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPlant Load (0.2ms)[0m  [1m[34mSELECT  "plants".* FROM "plants" WHERE "plants"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 35ms (ActiveRecord: 2.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-10-12 19:50:04 -0300
+Processing by GreenhousesController#index as HTML
+  [1m[36mGreenhouse Load (0.1ms)[0m  [1m[34mSELECT  "greenhouses".* FROM "greenhouses" ORDER BY "greenhouses"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  Rendering greenhouses/index.html.erb within layouts/application
+  [1m[36mPlantSector Load (0.2ms)[0m  [1m[34mSELECT "plant_sectors".* FROM "plant_sectors" WHERE "plant_sectors"."greenhouse_id" = ?[0m  [["greenhouse_id", 2]]
+  [1m[36mPlant Load (0.1ms)[0m  [1m[34mSELECT  "plants".* FROM "plants" WHERE "plants"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mActionEntry Load (0.1ms)[0m  [1m[34mSELECT "action_entries".* FROM "action_entries"[0m
+  Rendered greenhouses/index.html.erb within layouts/application (7.1ms)
+Completed 200 OK in 72ms (Views: 61.2ms | ActiveRecord: 1.3ms)
+
+
+Started DELETE "/greenhouse/plant_sectors/2" for 127.0.0.1 at 2017-10-12 19:50:12 -0300
+Processing by PlantSectorsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"8MnOaQQH79Dh4pGTMB1vqh1l8UZIyZSz31y7z+dungps3VMkogUJOR6h7R6hDudnm3bSC5eQE25XWR11xl6vLQ==", "id"=>"2"}
+  [1m[36mPlantSector Load (0.4ms)[0m  [1m[34mSELECT  "plant_sectors".* FROM "plant_sectors" WHERE "plant_sectors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mGreenhouse Load (0.2ms)[0m  [1m[34mSELECT  "greenhouses".* FROM "greenhouses" ORDER BY "greenhouses"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[31mDELETE FROM "plant_sectors" WHERE "plant_sectors"."id" = ?[0m  [["id", 2]]
+  [1m[35m (1.7ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 7ms (ActiveRecord: 2.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-10-12 19:50:12 -0300
+Processing by GreenhousesController#index as HTML
+  [1m[36mGreenhouse Load (0.2ms)[0m  [1m[34mSELECT  "greenhouses".* FROM "greenhouses" ORDER BY "greenhouses"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  Rendering greenhouses/index.html.erb within layouts/application
+  [1m[36mPlantSector Load (0.1ms)[0m  [1m[34mSELECT "plant_sectors".* FROM "plant_sectors" WHERE "plant_sectors"."greenhouse_id" = ?[0m  [["greenhouse_id", 2]]
+  [1m[36mActionEntry Load (0.1ms)[0m  [1m[34mSELECT "action_entries".* FROM "action_entries"[0m
+  Rendered greenhouses/index.html.erb within layouts/application (2.9ms)
+Completed 200 OK in 49ms (Views: 46.9ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/greenhouse/plant_sectors/new" for 127.0.0.1 at 2017-10-12 19:50:14 -0300
+Processing by PlantSectorsController#new as HTML
+  [1m[36mGreenhouse Load (0.8ms)[0m  [1m[34mSELECT  "greenhouses".* FROM "greenhouses" ORDER BY "greenhouses"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  Rendering plant_sectors/new.html.erb within layouts/application
+  [1m[36mPlant Load (0.2ms)[0m  [1m[34mSELECT "plants".* FROM "plants"[0m
+  Rendered plant_sectors/_form.html.erb (2.7ms)
+  Rendered plant_sectors/new.html.erb within layouts/application (4.2ms)
+Completed 200 OK in 67ms (Views: 62.0ms | ActiveRecord: 1.0ms)
+
+
+Started POST "/greenhouse/plant_sectors" for 127.0.0.1 at 2017-10-12 19:50:16 -0300
+Processing by PlantSectorsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"iz9daei5q6a+07sVmH7wavANCr068Upa7alf3jRbAJM4H1nbNYsgUObCZkR4wrzMGcXMzeS3irZ0kFOPur5Hwg==", "plant_sector"=>{"plant_id"=>"4"}, "commit"=>"Create Plant sector"}
+  [1m[36mGreenhouse Load (0.2ms)[0m  [1m[34mSELECT  "greenhouses".* FROM "greenhouses" ORDER BY "greenhouses"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPlant Load (0.1ms)[0m  [1m[34mSELECT  "plants".* FROM "plants" WHERE "plants"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "plant_sectors" ("created_at", "updated_at", "plant_id", "greenhouse_id") VALUES (?, ?, ?, ?)[0m  [["created_at", "2017-10-12 22:50:16.157184"], ["updated_at", "2017-10-12 22:50:16.157184"], ["plant_id", 4], ["greenhouse_id", 2]]
+  [1m[35m (1.8ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 7ms (ActiveRecord: 2.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-10-12 19:50:16 -0300
+Processing by GreenhousesController#index as HTML
+  [1m[36mGreenhouse Load (0.2ms)[0m  [1m[34mSELECT  "greenhouses".* FROM "greenhouses" ORDER BY "greenhouses"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  Rendering greenhouses/index.html.erb within layouts/application
+  [1m[36mPlantSector Load (0.1ms)[0m  [1m[34mSELECT "plant_sectors".* FROM "plant_sectors" WHERE "plant_sectors"."greenhouse_id" = ?[0m  [["greenhouse_id", 2]]
+  [1m[36mPlant Load (0.1ms)[0m  [1m[34mSELECT  "plants".* FROM "plants" WHERE "plants"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mActionEntry Load (0.1ms)[0m  [1m[34mSELECT "action_entries".* FROM "action_entries"[0m
+  Rendered greenhouses/index.html.erb within layouts/application (3.6ms)
+Completed 200 OK in 63ms (Views: 59.3ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/greenhouse/environment_aging" for 127.0.0.1 at 2017-10-12 19:50:20 -0300
+Processing by XtremeFarmBotController#environment_aging as HTML
+  [1m[36mPlantSector Load (0.7ms)[0m  [1m[34mSELECT "plant_sectors".* FROM "plant_sectors"[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPlant Load (0.2ms)[0m  [1m[34mSELECT  "plants".* FROM "plants" WHERE "plants"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPlant Load (0.1ms)[0m  [1m[34mSELECT  "plants".* FROM "plants" WHERE "plants"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[33mUPDATE "plant_sectors" SET "moisture" = ?, "magnesium" = ?, "potassium" = ?, "iron" = ?, "updated_at" = ? WHERE "plant_sectors"."id" = ?[0m  [["moisture", 6], ["magnesium", 237], ["potassium", 183], ["iron", 213], ["updated_at", "2017-10-12 22:50:20.096748"], ["id", 3]]
+  [1m[35m (1.6ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 12ms (ActiveRecord: 3.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-10-12 19:50:20 -0300
+Processing by GreenhousesController#index as HTML
+  [1m[36mGreenhouse Load (0.2ms)[0m  [1m[34mSELECT  "greenhouses".* FROM "greenhouses" ORDER BY "greenhouses"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  Rendering greenhouses/index.html.erb within layouts/application
+  [1m[36mPlantSector Load (0.1ms)[0m  [1m[34mSELECT "plant_sectors".* FROM "plant_sectors" WHERE "plant_sectors"."greenhouse_id" = ?[0m  [["greenhouse_id", 2]]
+  [1m[36mPlant Load (0.1ms)[0m  [1m[34mSELECT  "plants".* FROM "plants" WHERE "plants"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mActionEntry Load (0.2ms)[0m  [1m[34mSELECT "action_entries".* FROM "action_entries"[0m
+  Rendered greenhouses/index.html.erb within layouts/application (4.1ms)
+Completed 200 OK in 65ms (Views: 62.5ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-10-12 19:51:43 -0300
+Processing by GreenhousesController#index as HTML
+  [1m[36mGreenhouse Load (0.2ms)[0m  [1m[34mSELECT  "greenhouses".* FROM "greenhouses" ORDER BY "greenhouses"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mActionEntry Load (0.1ms)[0m  [1m[34mSELECT  "action_entries".* FROM "action_entries" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mCACHE ActionEntry Load (0.0ms)[0m  [1m[34mSELECT  "action_entries".* FROM "action_entries" LIMIT ?[0m  [["LIMIT", 11]]
+Completed 500 Internal Server Error in 230ms (ActiveRecord: 1.4ms)
+
+
+  [1m[36mCACHE ActionEntry Load (0.0ms)[0m  [1m[34mSELECT  "action_entries".* FROM "action_entries" LIMIT ?[0m  [["LIMIT", 11]]
+
+NameError - undefined local variable or method `gfdg' for #<GreenhousesController:0x00007fb2cdd12db0>:
+  app/controllers/greenhouses_controller.rb:9:in `index'
+  actionpack (5.1.4) lib/action_controller/metal/basic_implicit_render.rb:4:in `send_action'
+  actionpack (5.1.4) lib/abstract_controller/base.rb:186:in `process_action'
+  actionpack (5.1.4) lib/action_controller/metal/rendering.rb:30:in `process_action'
+  actionpack (5.1.4) lib/abstract_controller/callbacks.rb:20:in `block in process_action'
+  activesupport (5.1.4) lib/active_support/callbacks.rb:131:in `run_callbacks'
+  actionpack (5.1.4) lib/abstract_controller/callbacks.rb:19:in `process_action'
+  actionpack (5.1.4) lib/action_controller/metal/rescue.rb:20:in `process_action'
+  actionpack (5.1.4) lib/action_controller/metal/instrumentation.rb:32:in `block in process_action'
+  activesupport (5.1.4) lib/active_support/notifications.rb:166:in `block in instrument'
+  activesupport (5.1.4) lib/active_support/notifications/instrumenter.rb:21:in `instrument'
+  activesupport (5.1.4) lib/active_support/notifications.rb:166:in `instrument'
+  actionpack (5.1.4) lib/action_controller/metal/instrumentation.rb:30:in `process_action'
+  actionpack (5.1.4) lib/action_controller/metal/params_wrapper.rb:252:in `process_action'
+  activerecord (5.1.4) lib/active_record/railties/controller_runtime.rb:22:in `process_action'
+  actionpack (5.1.4) lib/abstract_controller/base.rb:124:in `process'
+  actionview (5.1.4) lib/action_view/rendering.rb:30:in `process'
+  actionpack (5.1.4) lib/action_controller/metal.rb:189:in `dispatch'
+  actionpack (5.1.4) lib/action_controller/metal.rb:253:in `dispatch'
+  actionpack (5.1.4) lib/action_dispatch/routing/route_set.rb:49:in `dispatch'
+  actionpack (5.1.4) lib/action_dispatch/routing/route_set.rb:31:in `serve'
+  actionpack (5.1.4) lib/action_dispatch/journey/router.rb:50:in `block in serve'
+  actionpack (5.1.4) lib/action_dispatch/journey/router.rb:33:in `serve'
+  actionpack (5.1.4) lib/action_dispatch/routing/route_set.rb:834:in `call'
+  rack (2.0.3) lib/rack/etag.rb:25:in `call'
+  rack (2.0.3) lib/rack/conditional_get.rb:25:in `call'
+  rack (2.0.3) lib/rack/head.rb:12:in `call'
+  rack (2.0.3) lib/rack/session/abstract/id.rb:232:in `context'
+  rack (2.0.3) lib/rack/session/abstract/id.rb:226:in `call'
+  actionpack (5.1.4) lib/action_dispatch/middleware/cookies.rb:613:in `call'
+  activerecord (5.1.4) lib/active_record/migration.rb:556:in `call'
+  actionpack (5.1.4) lib/action_dispatch/middleware/callbacks.rb:26:in `block in call'
+  activesupport (5.1.4) lib/active_support/callbacks.rb:97:in `run_callbacks'
+  actionpack (5.1.4) lib/action_dispatch/middleware/callbacks.rb:24:in `call'
+  actionpack (5.1.4) lib/action_dispatch/middleware/executor.rb:12:in `call'
+  better_errors (2.3.0) lib/better_errors/middleware.rb:84:in `protected_app_call'
+  better_errors (2.3.0) lib/better_errors/middleware.rb:79:in `better_errors_call'
+  better_errors (2.3.0) lib/better_errors/middleware.rb:57:in `call'
+  actionpack (5.1.4) lib/action_dispatch/middleware/debug_exceptions.rb:59:in `call'
+  web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+  web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+  web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+  actionpack (5.1.4) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+  railties (5.1.4) lib/rails/rack/logger.rb:36:in `call_app'
+  railties (5.1.4) lib/rails/rack/logger.rb:24:in `block in call'
+  activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+  activesupport (5.1.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `tagged'
+  railties (5.1.4) lib/rails/rack/logger.rb:24:in `call'
+  sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+  actionpack (5.1.4) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+  actionpack (5.1.4) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+  rack (2.0.3) lib/rack/method_override.rb:22:in `call'
+  rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+  activesupport (5.1.4) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+  actionpack (5.1.4) lib/action_dispatch/middleware/executor.rb:12:in `call'
+  actionpack (5.1.4) lib/action_dispatch/middleware/static.rb:125:in `call'
+  rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+  railties (5.1.4) lib/rails/engine.rb:522:in `call'
+  puma (3.10.0) lib/puma/configuration.rb:225:in `call'
+  puma (3.10.0) lib/puma/server.rb:605:in `handle_request'
+  puma (3.10.0) lib/puma/server.rb:437:in `process_client'
+  puma (3.10.0) lib/puma/server.rb:301:in `block in run'
+  puma (3.10.0) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+
+Started POST "/__better_errors/69b3f26911132f7d/variables" for 127.0.0.1 at 2017-10-12 19:51:43 -0300
+  [1m[36mActionEntry Load (0.1ms)[0m  [1m[34mSELECT  "action_entries".* FROM "action_entries" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mCACHE ActionEntry Load (0.0ms)[0m  [1m[34mSELECT  "action_entries".* FROM "action_entries" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mCACHE ActionEntry Load (0.0ms)[0m  [1m[34mSELECT  "action_entries".* FROM "action_entries" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mCACHE ActionEntry Load (0.0ms)[0m  [1m[34mSELECT  "action_entries".* FROM "action_entries" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mCACHE ActionEntry Load (0.0ms)[0m  [1m[34mSELECT  "action_entries".* FROM "action_entries" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mCACHE ActionEntry Load (0.0ms)[0m  [1m[34mSELECT  "action_entries".* FROM "action_entries" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mCACHE ActionEntry Load (0.0ms)[0m  [1m[34mSELECT  "action_entries".* FROM "action_entries" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mCACHE ActionEntry Load (0.0ms)[0m  [1m[34mSELECT  "action_entries".* FROM "action_entries" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mCACHE ActionEntry Load (0.0ms)[0m  [1m[34mSELECT  "action_entries".* FROM "action_entries" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mCACHE ActionEntry Load (0.0ms)[0m  [1m[34mSELECT  "action_entries".* FROM "action_entries" LIMIT ?[0m  [["LIMIT", 11]]
+Started POST "/__better_errors/69b3f26911132f7d/eval" for 127.0.0.1 at 2017-10-12 19:51:56 -0300
+Started POST "/__better_errors/69b3f26911132f7d/eval" for 127.0.0.1 at 2017-10-12 19:52:12 -0300
+Started POST "/__better_errors/69b3f26911132f7d/eval" for 127.0.0.1 at 2017-10-12 19:52:14 -0300
+  [1m[36mPlantSector Load (0.3ms)[0m  [1m[34mSELECT  "plant_sectors".* FROM "plant_sectors" WHERE "plant_sectors"."greenhouse_id" = ? LIMIT ?[0m  [["greenhouse_id", 2], ["LIMIT", 11]]
+Started POST "/__better_errors/69b3f26911132f7d/eval" for 127.0.0.1 at 2017-10-12 19:52:30 -0300
+  [1m[36mPlantSector Load (0.5ms)[0m  [1m[34mSELECT  "plant_sectors".* FROM "plant_sectors" WHERE "plant_sectors"."greenhouse_id" = ? LIMIT ?[0m  [["greenhouse_id", 2], ["LIMIT", 11]]
+Started GET "/" for 127.0.0.1 at 2017-10-12 19:53:28 -0300
+Processing by GreenhousesController#index as HTML
+  [1m[36mGreenhouse Load (0.1ms)[0m  [1m[34mSELECT  "greenhouses".* FROM "greenhouses" ORDER BY "greenhouses"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  Rendering greenhouses/index.html.erb within layouts/application
+  [1m[36mPlantSector Load (0.2ms)[0m  [1m[34mSELECT "plant_sectors".* FROM "plant_sectors" WHERE "plant_sectors"."greenhouse_id" = ?[0m  [["greenhouse_id", 2]]
+  [1m[36mPlant Load (0.1ms)[0m  [1m[34mSELECT  "plants".* FROM "plants" WHERE "plants"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mActionEntry Load (0.1ms)[0m  [1m[34mSELECT "action_entries".* FROM "action_entries"[0m
+  Rendered greenhouses/index.html.erb within layouts/application (30.0ms)
+Completed 200 OK in 95ms (Views: 80.2ms | ActiveRecord: 2.7ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-10-12 19:53:35 -0300
+Processing by GreenhousesController#index as HTML
+  [1m[36mGreenhouse Load (0.1ms)[0m  [1m[34mSELECT  "greenhouses".* FROM "greenhouses" ORDER BY "greenhouses"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  Rendering greenhouses/index.html.erb within layouts/application
+  [1m[36mPlantSector Load (0.1ms)[0m  [1m[34mSELECT "plant_sectors".* FROM "plant_sectors" WHERE "plant_sectors"."greenhouse_id" = ?[0m  [["greenhouse_id", 2]]
+  [1m[36mPlant Load (0.2ms)[0m  [1m[34mSELECT  "plants".* FROM "plants" WHERE "plants"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mActionEntry Load (0.3ms)[0m  [1m[34mSELECT "action_entries".* FROM "action_entries"[0m
+  Rendered greenhouses/index.html.erb within layouts/application (32.7ms)
+Completed 200 OK in 95ms (Views: 77.2ms | ActiveRecord: 3.4ms)
+
+
+Started GET "/greenhouse/environment_aging" for 127.0.0.1 at 2017-10-12 19:53:37 -0300
+Processing by XtremeFarmBotController#environment_aging as HTML
+  [1m[36mPlantSector Load (0.3ms)[0m  [1m[34mSELECT "plant_sectors".* FROM "plant_sectors"[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPlant Load (0.2ms)[0m  [1m[34mSELECT  "plants".* FROM "plants" WHERE "plants"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPlant Load (0.1ms)[0m  [1m[34mSELECT  "plants".* FROM "plants" WHERE "plants"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[35mSQL (0.8ms)[0m  [1m[33mUPDATE "plant_sectors" SET "elapsed_time" = ?, "moisture" = ?, "magnesium" = ?, "potassium" = ?, "iron" = ?, "updated_at" = ? WHERE "plant_sectors"."id" = ?[0m  [["elapsed_time", 1], ["moisture", 4], ["magnesium", 232], ["potassium", 159], ["iron", 66], ["updated_at", "2017-10-12 22:53:37.748237"], ["id", 3]]
+  [1m[35m (1.8ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 14ms (ActiveRecord: 3.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-10-12 19:53:37 -0300
+Processing by GreenhousesController#index as HTML
+  [1m[36mGreenhouse Load (0.2ms)[0m  [1m[34mSELECT  "greenhouses".* FROM "greenhouses" ORDER BY "greenhouses"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  Rendering greenhouses/index.html.erb within layouts/application
+  [1m[36mPlantSector Load (0.2ms)[0m  [1m[34mSELECT "plant_sectors".* FROM "plant_sectors" WHERE "plant_sectors"."greenhouse_id" = ?[0m  [["greenhouse_id", 2]]
+  [1m[36mPlant Load (0.1ms)[0m  [1m[34mSELECT  "plants".* FROM "plants" WHERE "plants"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mActionEntry Load (0.1ms)[0m  [1m[34mSELECT "action_entries".* FROM "action_entries"[0m
+  Rendered greenhouses/index.html.erb within layouts/application (5.4ms)
+Completed 200 OK in 65ms (Views: 61.4ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/greenhouse/environment_aging" for 127.0.0.1 at 2017-10-12 19:53:38 -0300
+Processing by XtremeFarmBotController#environment_aging as HTML
+  [1m[36mPlantSector Load (0.3ms)[0m  [1m[34mSELECT "plant_sectors".* FROM "plant_sectors"[0m
+  [1m[35m (0.4ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPlant Load (0.1ms)[0m  [1m[34mSELECT  "plants".* FROM "plants" WHERE "plants"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPlant Load (0.1ms)[0m  [1m[34mSELECT  "plants".* FROM "plants" WHERE "plants"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[33mUPDATE "plant_sectors" SET "elapsed_time" = ?, "moisture" = ?, "magnesium" = ?, "potassium" = ?, "iron" = ?, "updated_at" = ? WHERE "plant_sectors"."id" = ?[0m  [["elapsed_time", 2], ["moisture", 1], ["magnesium", 91], ["potassium", 51], ["iron", 57], ["updated_at", "2017-10-12 22:53:38.629547"], ["id", 3]]
+  [1m[35m (2.0ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 12ms (ActiveRecord: 3.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-10-12 19:53:38 -0300
+Processing by GreenhousesController#index as HTML
+  [1m[36mGreenhouse Load (0.2ms)[0m  [1m[34mSELECT  "greenhouses".* FROM "greenhouses" ORDER BY "greenhouses"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  Rendering greenhouses/index.html.erb within layouts/application
+  [1m[36mPlantSector Load (0.2ms)[0m  [1m[34mSELECT "plant_sectors".* FROM "plant_sectors" WHERE "plant_sectors"."greenhouse_id" = ?[0m  [["greenhouse_id", 2]]
+  [1m[36mPlant Load (0.2ms)[0m  [1m[34mSELECT  "plants".* FROM "plants" WHERE "plants"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mActionEntry Load (0.2ms)[0m  [1m[34mSELECT "action_entries".* FROM "action_entries"[0m
+  Rendered greenhouses/index.html.erb within layouts/application (6.6ms)
+Completed 200 OK in 94ms (Views: 90.9ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/greenhouse/environment_aging" for 127.0.0.1 at 2017-10-12 19:54:02 -0300
+Processing by XtremeFarmBotController#environment_aging as HTML
+  [1m[36mPlantSector Load (0.1ms)[0m  [1m[34mSELECT "plant_sectors".* FROM "plant_sectors"[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPlant Load (0.1ms)[0m  [1m[34mSELECT  "plants".* FROM "plants" WHERE "plants"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+Completed 500 Internal Server Error in 31ms (ActiveRecord: 1.5ms)
+
+
+
+NameError - undefined local variable or method `hgjfj' for #<PlantSector:0x00007fb2cec8ced0>:
+  activemodel (5.1.4) lib/active_model/attribute_methods.rb:432:in `method_missing'
+  app/models/plant_sector.rb:7:in `reset_time'
+  activesupport (5.1.4) lib/active_support/callbacks.rb:413:in `block in make_lambda'
+  activesupport (5.1.4) lib/active_support/callbacks.rb:178:in `block (2 levels) in halting_and_conditional'
+  activesupport (5.1.4) lib/active_support/callbacks.rb:601:in `block (2 levels) in default_terminator'
+  activesupport (5.1.4) lib/active_support/callbacks.rb:600:in `block in default_terminator'
+  activesupport (5.1.4) lib/active_support/callbacks.rb:179:in `block in halting_and_conditional'
+  activesupport (5.1.4) lib/active_support/callbacks.rb:507:in `block in invoke_before'
+  activesupport (5.1.4) lib/active_support/callbacks.rb:507:in `invoke_before'
+  activesupport (5.1.4) lib/active_support/callbacks.rb:130:in `run_callbacks'
+  activesupport (5.1.4) lib/active_support/callbacks.rb:827:in `_run_validate_callbacks'
+  activemodel (5.1.4) lib/active_model/validations.rb:405:in `run_validations!'
+  activemodel (5.1.4) lib/active_model/validations/callbacks.rb:110:in `block in run_validations!'
+  activesupport (5.1.4) lib/active_support/callbacks.rb:97:in `run_callbacks'
+  activesupport (5.1.4) lib/active_support/callbacks.rb:827:in `_run_validation_callbacks'
+  activemodel (5.1.4) lib/active_model/validations/callbacks.rb:110:in `run_validations!'
+  activemodel (5.1.4) lib/active_model/validations.rb:335:in `valid?'
+  activerecord (5.1.4) lib/active_record/validations.rb:65:in `valid?'
+  activerecord (5.1.4) lib/active_record/validations.rb:82:in `perform_validations'
+  activerecord (5.1.4) lib/active_record/validations.rb:44:in `save'
+  activerecord (5.1.4) lib/active_record/attribute_methods/dirty.rb:35:in `save'
+  activerecord (5.1.4) lib/active_record/transactions.rb:308:in `block (2 levels) in save'
+  activerecord (5.1.4) lib/active_record/transactions.rb:384:in `block in with_transaction_returning_status'
+  activerecord (5.1.4) lib/active_record/connection_adapters/abstract/database_statements.rb:233:in `transaction'
+  activerecord (5.1.4) lib/active_record/transactions.rb:210:in `transaction'
+  activerecord (5.1.4) lib/active_record/transactions.rb:381:in `with_transaction_returning_status'
+  activerecord (5.1.4) lib/active_record/transactions.rb:308:in `block in save'
+  activerecord (5.1.4) lib/active_record/transactions.rb:323:in `rollback_active_record_state!'
+  activerecord (5.1.4) lib/active_record/transactions.rb:307:in `save'
+  activerecord (5.1.4) lib/active_record/suppressor.rb:42:in `save'
+  activerecord (5.1.4) lib/active_record/persistence.rb:285:in `block in update'
+  activerecord (5.1.4) lib/active_record/transactions.rb:384:in `block in with_transaction_returning_status'
+  activerecord (5.1.4) lib/active_record/connection_adapters/abstract/database_statements.rb:235:in `block in transaction'
+  activerecord (5.1.4) lib/active_record/connection_adapters/abstract/transaction.rb:194:in `block in within_new_transaction'
+  /Users/gabi/.rbenv/versions/2.4.2/lib/ruby/2.4.0/monitor.rb:214:in `mon_synchronize'
+  activerecord (5.1.4) lib/active_record/connection_adapters/abstract/transaction.rb:191:in `within_new_transaction'
+  activerecord (5.1.4) lib/active_record/connection_adapters/abstract/database_statements.rb:235:in `transaction'
+  activerecord (5.1.4) lib/active_record/transactions.rb:210:in `transaction'
+  activerecord (5.1.4) lib/active_record/transactions.rb:381:in `with_transaction_returning_status'
+  activerecord (5.1.4) lib/active_record/persistence.rb:283:in `update'
+  app/controllers/xtreme_farm_bot_controller.rb:86:in `block in environment_aging'
+  activerecord (5.1.4) lib/active_record/relation/delegation.rb:39:in `each'
+  app/controllers/xtreme_farm_bot_controller.rb:85:in `environment_aging'
+  actionpack (5.1.4) lib/action_controller/metal/basic_implicit_render.rb:4:in `send_action'
+  actionpack (5.1.4) lib/abstract_controller/base.rb:186:in `process_action'
+  actionpack (5.1.4) lib/action_controller/metal/rendering.rb:30:in `process_action'
+  actionpack (5.1.4) lib/abstract_controller/callbacks.rb:20:in `block in process_action'
+  activesupport (5.1.4) lib/active_support/callbacks.rb:131:in `run_callbacks'
+  actionpack (5.1.4) lib/abstract_controller/callbacks.rb:19:in `process_action'
+  actionpack (5.1.4) lib/action_controller/metal/rescue.rb:20:in `process_action'
+  actionpack (5.1.4) lib/action_controller/metal/instrumentation.rb:32:in `block in process_action'
+  activesupport (5.1.4) lib/active_support/notifications.rb:166:in `block in instrument'
+  activesupport (5.1.4) lib/active_support/notifications/instrumenter.rb:21:in `instrument'
+  activesupport (5.1.4) lib/active_support/notifications.rb:166:in `instrument'
+  actionpack (5.1.4) lib/action_controller/metal/instrumentation.rb:30:in `process_action'
+  actionpack (5.1.4) lib/action_controller/metal/params_wrapper.rb:252:in `process_action'
+  activerecord (5.1.4) lib/active_record/railties/controller_runtime.rb:22:in `process_action'
+  actionpack (5.1.4) lib/abstract_controller/base.rb:124:in `process'
+  actionview (5.1.4) lib/action_view/rendering.rb:30:in `process'
+  actionpack (5.1.4) lib/action_controller/metal.rb:189:in `dispatch'
+  actionpack (5.1.4) lib/action_controller/metal.rb:253:in `dispatch'
+  actionpack (5.1.4) lib/action_dispatch/routing/route_set.rb:49:in `dispatch'
+  actionpack (5.1.4) lib/action_dispatch/routing/route_set.rb:31:in `serve'
+  actionpack (5.1.4) lib/action_dispatch/journey/router.rb:50:in `block in serve'
+  actionpack (5.1.4) lib/action_dispatch/journey/router.rb:33:in `serve'
+  actionpack (5.1.4) lib/action_dispatch/routing/route_set.rb:834:in `call'
+  rack (2.0.3) lib/rack/etag.rb:25:in `call'
+  rack (2.0.3) lib/rack/conditional_get.rb:25:in `call'
+  rack (2.0.3) lib/rack/head.rb:12:in `call'
+  rack (2.0.3) lib/rack/session/abstract/id.rb:232:in `context'
+  rack (2.0.3) lib/rack/session/abstract/id.rb:226:in `call'
+  actionpack (5.1.4) lib/action_dispatch/middleware/cookies.rb:613:in `call'
+  activerecord (5.1.4) lib/active_record/migration.rb:556:in `call'
+  actionpack (5.1.4) lib/action_dispatch/middleware/callbacks.rb:26:in `block in call'
+  activesupport (5.1.4) lib/active_support/callbacks.rb:97:in `run_callbacks'
+  actionpack (5.1.4) lib/action_dispatch/middleware/callbacks.rb:24:in `call'
+  actionpack (5.1.4) lib/action_dispatch/middleware/executor.rb:12:in `call'
+  better_errors (2.3.0) lib/better_errors/middleware.rb:84:in `protected_app_call'
+  better_errors (2.3.0) lib/better_errors/middleware.rb:79:in `better_errors_call'
+  better_errors (2.3.0) lib/better_errors/middleware.rb:57:in `call'
+  actionpack (5.1.4) lib/action_dispatch/middleware/debug_exceptions.rb:59:in `call'
+  web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+  web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+  web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+  actionpack (5.1.4) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+  railties (5.1.4) lib/rails/rack/logger.rb:36:in `call_app'
+  railties (5.1.4) lib/rails/rack/logger.rb:24:in `block in call'
+  activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+  activesupport (5.1.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `tagged'
+  railties (5.1.4) lib/rails/rack/logger.rb:24:in `call'
+  sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+  actionpack (5.1.4) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+  actionpack (5.1.4) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+  rack (2.0.3) lib/rack/method_override.rb:22:in `call'
+  rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+  activesupport (5.1.4) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+  actionpack (5.1.4) lib/action_dispatch/middleware/executor.rb:12:in `call'
+  actionpack (5.1.4) lib/action_dispatch/middleware/static.rb:125:in `call'
+  rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+  railties (5.1.4) lib/rails/engine.rb:522:in `call'
+  puma (3.10.0) lib/puma/configuration.rb:225:in `call'
+  puma (3.10.0) lib/puma/server.rb:605:in `handle_request'
+  puma (3.10.0) lib/puma/server.rb:437:in `process_client'
+  puma (3.10.0) lib/puma/server.rb:301:in `block in run'
+  puma (3.10.0) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+
+Started POST "/__better_errors/07139b09fd3551c5/variables" for 127.0.0.1 at 2017-10-12 19:54:03 -0300
+  [1m[36mPlant Load (0.2ms)[0m  [1m[34mSELECT  "plants".* FROM "plants" WHERE "plants"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 11]]
+Started POST "/__better_errors/07139b09fd3551c5/eval" for 127.0.0.1 at 2017-10-12 19:54:08 -0300
+Started POST "/__better_errors/07139b09fd3551c5/eval" for 127.0.0.1 at 2017-10-12 19:54:16 -0300
+Started POST "/__better_errors/07139b09fd3551c5/eval" for 127.0.0.1 at 2017-10-12 19:56:12 -0300
+Started POST "/__better_errors/07139b09fd3551c5/eval" for 127.0.0.1 at 2017-10-12 19:56:20 -0300
+Started POST "/__better_errors/07139b09fd3551c5/eval" for 127.0.0.1 at 2017-10-12 19:56:23 -0300
+Started POST "/__better_errors/07139b09fd3551c5/eval" for 127.0.0.1 at 2017-10-12 19:57:17 -0300
+Started POST "/__better_errors/07139b09fd3551c5/eval" for 127.0.0.1 at 2017-10-12 19:57:29 -0300
+Started POST "/__better_errors/07139b09fd3551c5/eval" for 127.0.0.1 at 2017-10-12 19:57:34 -0300
+Started POST "/__better_errors/07139b09fd3551c5/eval" for 127.0.0.1 at 2017-10-12 19:58:07 -0300
+Started POST "/__better_errors/07139b09fd3551c5/eval" for 127.0.0.1 at 2017-10-12 19:58:11 -0300
+Started POST "/__better_errors/07139b09fd3551c5/eval" for 127.0.0.1 at 2017-10-12 19:58:32 -0300
+Started POST "/__better_errors/07139b09fd3551c5/eval" for 127.0.0.1 at 2017-10-12 19:58:41 -0300
+Started POST "/__better_errors/07139b09fd3551c5/eval" for 127.0.0.1 at 2017-10-12 19:59:39 -0300
+Started POST "/__better_errors/07139b09fd3551c5/eval" for 127.0.0.1 at 2017-10-12 20:00:08 -0300
+Started GET "/" for 127.0.0.1 at 2017-10-12 20:00:17 -0300
+Processing by GreenhousesController#index as HTML
+  [1m[36mGreenhouse Load (0.3ms)[0m  [1m[34mSELECT  "greenhouses".* FROM "greenhouses" ORDER BY "greenhouses"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  Rendering greenhouses/index.html.erb within layouts/application
+  [1m[36mPlantSector Load (0.1ms)[0m  [1m[34mSELECT "plant_sectors".* FROM "plant_sectors" WHERE "plant_sectors"."greenhouse_id" = ?[0m  [["greenhouse_id", 2]]
+  [1m[36mPlant Load (0.4ms)[0m  [1m[34mSELECT  "plants".* FROM "plants" WHERE "plants"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mActionEntry Load (0.1ms)[0m  [1m[34mSELECT "action_entries".* FROM "action_entries"[0m
+  Rendered greenhouses/index.html.erb within layouts/application (41.0ms)
+Completed 200 OK in 131ms (Views: 114.5ms | ActiveRecord: 3.4ms)
+
+
+Started GET "/greenhouse/plant_sectors/3/edit" for 127.0.0.1 at 2017-10-12 20:00:19 -0300
+Processing by PlantSectorsController#edit as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mPlantSector Load (0.2ms)[0m  [1m[34mSELECT  "plant_sectors".* FROM "plant_sectors" WHERE "plant_sectors"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mGreenhouse Load (0.5ms)[0m  [1m[34mSELECT  "greenhouses".* FROM "greenhouses" ORDER BY "greenhouses"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  Rendering plant_sectors/edit.html.erb within layouts/application
+  [1m[36mPlant Load (0.2ms)[0m  [1m[34mSELECT "plants".* FROM "plants"[0m
+  Rendered plant_sectors/_form.html.erb (3.1ms)
+  Rendered plant_sectors/edit.html.erb within layouts/application (5.5ms)
+Completed 200 OK in 88ms (Views: 82.9ms | ActiveRecord: 0.9ms)
+
+
+Started PATCH "/greenhouse/plant_sectors/2" for 127.0.0.1 at 2017-10-12 20:00:23 -0300
+Processing by PlantSectorsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"VDKW7IcqJNMuxEwEfw9ivXxxC/L2zuO6m8IqMq+7k3uWj8FIuHuTZthaDuFUV0l50VFToKFgKL/wmKGd2OoIhA==", "plant_sector"=>{"plant_id"=>"5"}, "commit"=>"Update Plant sector", "id"=>"2"}
+  [1m[36mPlantSector Load (0.1ms)[0m  [1m[34mSELECT  "plant_sectors".* FROM "plant_sectors" WHERE "plant_sectors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+Completed 404 Not Found in 2ms (ActiveRecord: 0.1ms)
+
+
+
+ActiveRecord::RecordNotFound - Couldn't find PlantSector with 'id'=2:
+  activerecord (5.1.4) lib/active_record/core.rb:189:in `find'
+  app/controllers/plant_sectors_controller.rb:68:in `set_plant_sector'
+  activesupport (5.1.4) lib/active_support/callbacks.rb:413:in `block in make_lambda'
+  activesupport (5.1.4) lib/active_support/callbacks.rb:178:in `block (2 levels) in halting_and_conditional'
+  actionpack (5.1.4) lib/abstract_controller/callbacks.rb:12:in `block (2 levels) in <module:Callbacks>'
+  activesupport (5.1.4) lib/active_support/callbacks.rb:179:in `block in halting_and_conditional'
+  activesupport (5.1.4) lib/active_support/callbacks.rb:507:in `block in invoke_before'
+  activesupport (5.1.4) lib/active_support/callbacks.rb:507:in `invoke_before'
+  activesupport (5.1.4) lib/active_support/callbacks.rb:130:in `run_callbacks'
+  actionpack (5.1.4) lib/abstract_controller/callbacks.rb:19:in `process_action'
+  actionpack (5.1.4) lib/action_controller/metal/rescue.rb:20:in `process_action'
+  actionpack (5.1.4) lib/action_controller/metal/instrumentation.rb:32:in `block in process_action'
+  activesupport (5.1.4) lib/active_support/notifications.rb:166:in `block in instrument'
+  activesupport (5.1.4) lib/active_support/notifications/instrumenter.rb:21:in `instrument'
+  activesupport (5.1.4) lib/active_support/notifications.rb:166:in `instrument'
+  actionpack (5.1.4) lib/action_controller/metal/instrumentation.rb:30:in `process_action'
+  actionpack (5.1.4) lib/action_controller/metal/params_wrapper.rb:252:in `process_action'
+  activerecord (5.1.4) lib/active_record/railties/controller_runtime.rb:22:in `process_action'
+  actionpack (5.1.4) lib/abstract_controller/base.rb:124:in `process'
+  actionview (5.1.4) lib/action_view/rendering.rb:30:in `process'
+  actionpack (5.1.4) lib/action_controller/metal.rb:189:in `dispatch'
+  actionpack (5.1.4) lib/action_controller/metal.rb:253:in `dispatch'
+  actionpack (5.1.4) lib/action_dispatch/routing/route_set.rb:49:in `dispatch'
+  actionpack (5.1.4) lib/action_dispatch/routing/route_set.rb:31:in `serve'
+  actionpack (5.1.4) lib/action_dispatch/journey/router.rb:50:in `block in serve'
+  actionpack (5.1.4) lib/action_dispatch/journey/router.rb:33:in `serve'
+  actionpack (5.1.4) lib/action_dispatch/routing/route_set.rb:834:in `call'
+  rack (2.0.3) lib/rack/etag.rb:25:in `call'
+  rack (2.0.3) lib/rack/conditional_get.rb:38:in `call'
+  rack (2.0.3) lib/rack/head.rb:12:in `call'
+  rack (2.0.3) lib/rack/session/abstract/id.rb:232:in `context'
+  rack (2.0.3) lib/rack/session/abstract/id.rb:226:in `call'
+  actionpack (5.1.4) lib/action_dispatch/middleware/cookies.rb:613:in `call'
+  activerecord (5.1.4) lib/active_record/migration.rb:556:in `call'
+  actionpack (5.1.4) lib/action_dispatch/middleware/callbacks.rb:26:in `block in call'
+  activesupport (5.1.4) lib/active_support/callbacks.rb:97:in `run_callbacks'
+  actionpack (5.1.4) lib/action_dispatch/middleware/callbacks.rb:24:in `call'
+  actionpack (5.1.4) lib/action_dispatch/middleware/executor.rb:12:in `call'
+  better_errors (2.3.0) lib/better_errors/middleware.rb:84:in `protected_app_call'
+  better_errors (2.3.0) lib/better_errors/middleware.rb:79:in `better_errors_call'
+  better_errors (2.3.0) lib/better_errors/middleware.rb:57:in `call'
+  actionpack (5.1.4) lib/action_dispatch/middleware/debug_exceptions.rb:59:in `call'
+  web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+  web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+  web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+  actionpack (5.1.4) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+  railties (5.1.4) lib/rails/rack/logger.rb:36:in `call_app'
+  railties (5.1.4) lib/rails/rack/logger.rb:24:in `block in call'
+  activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+  activesupport (5.1.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `tagged'
+  railties (5.1.4) lib/rails/rack/logger.rb:24:in `call'
+  sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+  actionpack (5.1.4) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+  actionpack (5.1.4) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+  rack (2.0.3) lib/rack/method_override.rb:22:in `call'
+  rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+  activesupport (5.1.4) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+  actionpack (5.1.4) lib/action_dispatch/middleware/executor.rb:12:in `call'
+  actionpack (5.1.4) lib/action_dispatch/middleware/static.rb:125:in `call'
+  rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+  railties (5.1.4) lib/rails/engine.rb:522:in `call'
+  puma (3.10.0) lib/puma/configuration.rb:225:in `call'
+  puma (3.10.0) lib/puma/server.rb:605:in `handle_request'
+  puma (3.10.0) lib/puma/server.rb:437:in `process_client'
+  puma (3.10.0) lib/puma/server.rb:301:in `block in run'
+  puma (3.10.0) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+
+Started POST "/__better_errors/f8ba76f536f2d2bb/variables" for 127.0.0.1 at 2017-10-12 20:00:23 -0300
+Started GET "/greenhouse/plant_sectors/3/edit" for 127.0.0.1 at 2017-10-12 20:00:31 -0300
+Processing by PlantSectorsController#edit as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mPlantSector Load (0.2ms)[0m  [1m[34mSELECT  "plant_sectors".* FROM "plant_sectors" WHERE "plant_sectors"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mGreenhouse Load (0.2ms)[0m  [1m[34mSELECT  "greenhouses".* FROM "greenhouses" ORDER BY "greenhouses"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  Rendering plant_sectors/edit.html.erb within layouts/application
+  [1m[36mPlant Load (0.2ms)[0m  [1m[34mSELECT "plants".* FROM "plants"[0m
+  Rendered plant_sectors/_form.html.erb (4.1ms)
+  Rendered plant_sectors/edit.html.erb within layouts/application (5.6ms)
+Completed 200 OK in 72ms (Views: 67.9ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-10-12 20:00:32 -0300
+Processing by GreenhousesController#index as HTML
+  [1m[36mGreenhouse Load (0.3ms)[0m  [1m[34mSELECT  "greenhouses".* FROM "greenhouses" ORDER BY "greenhouses"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  Rendering greenhouses/index.html.erb within layouts/application
+  [1m[36mPlantSector Load (0.2ms)[0m  [1m[34mSELECT "plant_sectors".* FROM "plant_sectors" WHERE "plant_sectors"."greenhouse_id" = ?[0m  [["greenhouse_id", 2]]
+  [1m[36mPlant Load (0.2ms)[0m  [1m[34mSELECT  "plants".* FROM "plants" WHERE "plants"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mActionEntry Load (0.2ms)[0m  [1m[34mSELECT "action_entries".* FROM "action_entries"[0m
+  Rendered greenhouses/index.html.erb within layouts/application (6.1ms)
+Completed 200 OK in 82ms (Views: 75.8ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/greenhouse/plant_sectors/3/edit" for 127.0.0.1 at 2017-10-12 20:00:40 -0300
+Processing by PlantSectorsController#edit as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mPlantSector Load (0.2ms)[0m  [1m[34mSELECT  "plant_sectors".* FROM "plant_sectors" WHERE "plant_sectors"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mGreenhouse Load (0.2ms)[0m  [1m[34mSELECT  "greenhouses".* FROM "greenhouses" ORDER BY "greenhouses"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  Rendering plant_sectors/edit.html.erb within layouts/application
+  [1m[36mPlant Load (0.2ms)[0m  [1m[34mSELECT "plants".* FROM "plants"[0m
+  Rendered plant_sectors/_form.html.erb (3.3ms)
+  Rendered plant_sectors/edit.html.erb within layouts/application (5.5ms)
+Completed 200 OK in 67ms (Views: 62.0ms | ActiveRecord: 0.6ms)
+
+
+Started PATCH "/greenhouse/plant_sectors/2" for 127.0.0.1 at 2017-10-12 20:00:43 -0300
+Processing by PlantSectorsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"5JgRHD3OEwKjlxXeRAjrqFUnlx0rIyM6EemUBYYKNlAmJUa4Ap+kt1UJVztvUMBs+AfPT3yN6D96sx+q8Vutrw==", "plant_sector"=>{"plant_id"=>"4"}, "commit"=>"Update Plant sector", "id"=>"2"}
+  [1m[36mPlantSector Load (0.2ms)[0m  [1m[34mSELECT  "plant_sectors".* FROM "plant_sectors" WHERE "plant_sectors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+Completed 404 Not Found in 3ms (ActiveRecord: 0.2ms)
+
+
+
+ActiveRecord::RecordNotFound - Couldn't find PlantSector with 'id'=2:
+  activerecord (5.1.4) lib/active_record/core.rb:189:in `find'
+  app/controllers/plant_sectors_controller.rb:68:in `set_plant_sector'
+  activesupport (5.1.4) lib/active_support/callbacks.rb:413:in `block in make_lambda'
+  activesupport (5.1.4) lib/active_support/callbacks.rb:178:in `block (2 levels) in halting_and_conditional'
+  actionpack (5.1.4) lib/abstract_controller/callbacks.rb:12:in `block (2 levels) in <module:Callbacks>'
+  activesupport (5.1.4) lib/active_support/callbacks.rb:179:in `block in halting_and_conditional'
+  activesupport (5.1.4) lib/active_support/callbacks.rb:507:in `block in invoke_before'
+  activesupport (5.1.4) lib/active_support/callbacks.rb:507:in `invoke_before'
+  activesupport (5.1.4) lib/active_support/callbacks.rb:130:in `run_callbacks'
+  actionpack (5.1.4) lib/abstract_controller/callbacks.rb:19:in `process_action'
+  actionpack (5.1.4) lib/action_controller/metal/rescue.rb:20:in `process_action'
+  actionpack (5.1.4) lib/action_controller/metal/instrumentation.rb:32:in `block in process_action'
+  activesupport (5.1.4) lib/active_support/notifications.rb:166:in `block in instrument'
+  activesupport (5.1.4) lib/active_support/notifications/instrumenter.rb:21:in `instrument'
+  activesupport (5.1.4) lib/active_support/notifications.rb:166:in `instrument'
+  actionpack (5.1.4) lib/action_controller/metal/instrumentation.rb:30:in `process_action'
+  actionpack (5.1.4) lib/action_controller/metal/params_wrapper.rb:252:in `process_action'
+  activerecord (5.1.4) lib/active_record/railties/controller_runtime.rb:22:in `process_action'
+  actionpack (5.1.4) lib/abstract_controller/base.rb:124:in `process'
+  actionview (5.1.4) lib/action_view/rendering.rb:30:in `process'
+  actionpack (5.1.4) lib/action_controller/metal.rb:189:in `dispatch'
+  actionpack (5.1.4) lib/action_controller/metal.rb:253:in `dispatch'
+  actionpack (5.1.4) lib/action_dispatch/routing/route_set.rb:49:in `dispatch'
+  actionpack (5.1.4) lib/action_dispatch/routing/route_set.rb:31:in `serve'
+  actionpack (5.1.4) lib/action_dispatch/journey/router.rb:50:in `block in serve'
+  actionpack (5.1.4) lib/action_dispatch/journey/router.rb:33:in `serve'
+  actionpack (5.1.4) lib/action_dispatch/routing/route_set.rb:834:in `call'
+  rack (2.0.3) lib/rack/etag.rb:25:in `call'
+  rack (2.0.3) lib/rack/conditional_get.rb:38:in `call'
+  rack (2.0.3) lib/rack/head.rb:12:in `call'
+  rack (2.0.3) lib/rack/session/abstract/id.rb:232:in `context'
+  rack (2.0.3) lib/rack/session/abstract/id.rb:226:in `call'
+  actionpack (5.1.4) lib/action_dispatch/middleware/cookies.rb:613:in `call'
+  activerecord (5.1.4) lib/active_record/migration.rb:556:in `call'
+  actionpack (5.1.4) lib/action_dispatch/middleware/callbacks.rb:26:in `block in call'
+  activesupport (5.1.4) lib/active_support/callbacks.rb:97:in `run_callbacks'
+  actionpack (5.1.4) lib/action_dispatch/middleware/callbacks.rb:24:in `call'
+  actionpack (5.1.4) lib/action_dispatch/middleware/executor.rb:12:in `call'
+  better_errors (2.3.0) lib/better_errors/middleware.rb:84:in `protected_app_call'
+  better_errors (2.3.0) lib/better_errors/middleware.rb:79:in `better_errors_call'
+  better_errors (2.3.0) lib/better_errors/middleware.rb:57:in `call'
+  actionpack (5.1.4) lib/action_dispatch/middleware/debug_exceptions.rb:59:in `call'
+  web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+  web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+  web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+  actionpack (5.1.4) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+  railties (5.1.4) lib/rails/rack/logger.rb:36:in `call_app'
+  railties (5.1.4) lib/rails/rack/logger.rb:24:in `block in call'
+  activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+  activesupport (5.1.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `tagged'
+  railties (5.1.4) lib/rails/rack/logger.rb:24:in `call'
+  sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+  actionpack (5.1.4) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+  actionpack (5.1.4) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+  rack (2.0.3) lib/rack/method_override.rb:22:in `call'
+  rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+  activesupport (5.1.4) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+  actionpack (5.1.4) lib/action_dispatch/middleware/executor.rb:12:in `call'
+  actionpack (5.1.4) lib/action_dispatch/middleware/static.rb:125:in `call'
+  rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+  railties (5.1.4) lib/rails/engine.rb:522:in `call'
+  puma (3.10.0) lib/puma/configuration.rb:225:in `call'
+  puma (3.10.0) lib/puma/server.rb:605:in `handle_request'
+  puma (3.10.0) lib/puma/server.rb:437:in `process_client'
+  puma (3.10.0) lib/puma/server.rb:301:in `block in run'
+  puma (3.10.0) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+
+Started POST "/__better_errors/35ed02d2b3e2398d/variables" for 127.0.0.1 at 2017-10-12 20:00:43 -0300
+  [1m[35mSQL (6.8ms)[0m  [1m[31mDELETE FROM "plant_sectors"[0m
+  [1m[35mSQL (2.3ms)[0m  [1m[31mDELETE FROM "plant_sectors"[0m
+Started GET "/" for 127.0.0.1 at 2017-10-12 20:01:23 -0300
+Processing by GreenhousesController#index as HTML
+  [1m[36mGreenhouse Load (0.2ms)[0m  [1m[34mSELECT  "greenhouses".* FROM "greenhouses" ORDER BY "greenhouses"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  Rendering greenhouses/index.html.erb within layouts/application
+  [1m[36mPlantSector Load (0.1ms)[0m  [1m[34mSELECT "plant_sectors".* FROM "plant_sectors" WHERE "plant_sectors"."greenhouse_id" = ?[0m  [["greenhouse_id", 2]]
+  [1m[36mActionEntry Load (0.1ms)[0m  [1m[34mSELECT "action_entries".* FROM "action_entries"[0m
+  Rendered greenhouses/index.html.erb within layouts/application (3.1ms)
+Completed 200 OK in 68ms (Views: 65.4ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/greenhouse/plant_sectors/new" for 127.0.0.1 at 2017-10-12 20:01:24 -0300
+Processing by PlantSectorsController#new as HTML
+  [1m[36mGreenhouse Load (0.7ms)[0m  [1m[34mSELECT  "greenhouses".* FROM "greenhouses" ORDER BY "greenhouses"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  Rendering plant_sectors/new.html.erb within layouts/application
+  [1m[36mPlant Load (0.2ms)[0m  [1m[34mSELECT "plants".* FROM "plants"[0m
+  Rendered plant_sectors/_form.html.erb (2.3ms)
+  Rendered plant_sectors/new.html.erb within layouts/application (3.8ms)
+Completed 200 OK in 75ms (Views: 67.3ms | ActiveRecord: 0.9ms)
+
+
+Started POST "/greenhouse/plant_sectors" for 127.0.0.1 at 2017-10-12 20:01:26 -0300
+Processing by PlantSectorsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"wu4UEjJSpxZC7ziqB/dGxa0MEdZe7DL3Kgc8NXXMoItxzhCg72As4Br+5fvnSwpjRMTXpoCq8huzPjBk+ynn2g==", "plant_sector"=>{"plant_id"=>"4"}, "commit"=>"Create Plant sector"}
+  [1m[36mGreenhouse Load (0.2ms)[0m  [1m[34mSELECT  "greenhouses".* FROM "greenhouses" ORDER BY "greenhouses"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPlant Load (0.1ms)[0m  [1m[34mSELECT  "plants".* FROM "plants" WHERE "plants"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "plant_sectors" ("created_at", "updated_at", "plant_id", "greenhouse_id") VALUES (?, ?, ?, ?)[0m  [["created_at", "2017-10-12 23:01:26.545065"], ["updated_at", "2017-10-12 23:01:26.545065"], ["plant_id", 4], ["greenhouse_id", 2]]
+  [1m[35m (2.3ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 8ms (ActiveRecord: 3.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-10-12 20:01:26 -0300
+Processing by GreenhousesController#index as HTML
+  [1m[36mGreenhouse Load (0.2ms)[0m  [1m[34mSELECT  "greenhouses".* FROM "greenhouses" ORDER BY "greenhouses"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  Rendering greenhouses/index.html.erb within layouts/application
+  [1m[36mPlantSector Load (0.1ms)[0m  [1m[34mSELECT "plant_sectors".* FROM "plant_sectors" WHERE "plant_sectors"."greenhouse_id" = ?[0m  [["greenhouse_id", 2]]
+  [1m[36mPlant Load (0.2ms)[0m  [1m[34mSELECT  "plants".* FROM "plants" WHERE "plants"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mActionEntry Load (0.1ms)[0m  [1m[34mSELECT "action_entries".* FROM "action_entries"[0m
+  Rendered greenhouses/index.html.erb within layouts/application (5.0ms)
+Completed 200 OK in 57ms (Views: 54.2ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/greenhouse/plant_sectors/4/edit" for 127.0.0.1 at 2017-10-12 20:01:29 -0300
+Processing by PlantSectorsController#edit as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mPlantSector Load (0.3ms)[0m  [1m[34mSELECT  "plant_sectors".* FROM "plant_sectors" WHERE "plant_sectors"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mGreenhouse Load (0.5ms)[0m  [1m[34mSELECT  "greenhouses".* FROM "greenhouses" ORDER BY "greenhouses"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  Rendering plant_sectors/edit.html.erb within layouts/application
+  [1m[36mPlant Load (0.2ms)[0m  [1m[34mSELECT "plants".* FROM "plants"[0m
+  Rendered plant_sectors/_form.html.erb (3.3ms)
+  Rendered plant_sectors/edit.html.erb within layouts/application (5.1ms)
+Completed 200 OK in 61ms (Views: 53.9ms | ActiveRecord: 1.0ms)
+
+
+Started PATCH "/greenhouse/plant_sectors/2" for 127.0.0.1 at 2017-10-12 20:01:31 -0300
+Processing by PlantSectorsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"X+/q6DYq+mp3HLOf527Itg7ccvKaLrzVmHFKc4ooejCdUr1MCXtN34GC8XrMNuNyo/wqoM2Ad9DzK8Hc/Xnhzw==", "plant_sector"=>{"plant_id"=>"4"}, "commit"=>"Update Plant sector", "id"=>"2"}
+  [1m[36mPlantSector Load (0.2ms)[0m  [1m[34mSELECT  "plant_sectors".* FROM "plant_sectors" WHERE "plant_sectors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+Completed 404 Not Found in 2ms (ActiveRecord: 0.2ms)
+
+
+
+ActiveRecord::RecordNotFound - Couldn't find PlantSector with 'id'=2:
+  activerecord (5.1.4) lib/active_record/core.rb:189:in `find'
+  app/controllers/plant_sectors_controller.rb:68:in `set_plant_sector'
+  activesupport (5.1.4) lib/active_support/callbacks.rb:413:in `block in make_lambda'
+  activesupport (5.1.4) lib/active_support/callbacks.rb:178:in `block (2 levels) in halting_and_conditional'
+  actionpack (5.1.4) lib/abstract_controller/callbacks.rb:12:in `block (2 levels) in <module:Callbacks>'
+  activesupport (5.1.4) lib/active_support/callbacks.rb:179:in `block in halting_and_conditional'
+  activesupport (5.1.4) lib/active_support/callbacks.rb:507:in `block in invoke_before'
+  activesupport (5.1.4) lib/active_support/callbacks.rb:507:in `invoke_before'
+  activesupport (5.1.4) lib/active_support/callbacks.rb:130:in `run_callbacks'
+  actionpack (5.1.4) lib/abstract_controller/callbacks.rb:19:in `process_action'
+  actionpack (5.1.4) lib/action_controller/metal/rescue.rb:20:in `process_action'
+  actionpack (5.1.4) lib/action_controller/metal/instrumentation.rb:32:in `block in process_action'
+  activesupport (5.1.4) lib/active_support/notifications.rb:166:in `block in instrument'
+  activesupport (5.1.4) lib/active_support/notifications/instrumenter.rb:21:in `instrument'
+  activesupport (5.1.4) lib/active_support/notifications.rb:166:in `instrument'
+  actionpack (5.1.4) lib/action_controller/metal/instrumentation.rb:30:in `process_action'
+  actionpack (5.1.4) lib/action_controller/metal/params_wrapper.rb:252:in `process_action'
+  activerecord (5.1.4) lib/active_record/railties/controller_runtime.rb:22:in `process_action'
+  actionpack (5.1.4) lib/abstract_controller/base.rb:124:in `process'
+  actionview (5.1.4) lib/action_view/rendering.rb:30:in `process'
+  actionpack (5.1.4) lib/action_controller/metal.rb:189:in `dispatch'
+  actionpack (5.1.4) lib/action_controller/metal.rb:253:in `dispatch'
+  actionpack (5.1.4) lib/action_dispatch/routing/route_set.rb:49:in `dispatch'
+  actionpack (5.1.4) lib/action_dispatch/routing/route_set.rb:31:in `serve'
+  actionpack (5.1.4) lib/action_dispatch/journey/router.rb:50:in `block in serve'
+  actionpack (5.1.4) lib/action_dispatch/journey/router.rb:33:in `serve'
+  actionpack (5.1.4) lib/action_dispatch/routing/route_set.rb:834:in `call'
+  rack (2.0.3) lib/rack/etag.rb:25:in `call'
+  rack (2.0.3) lib/rack/conditional_get.rb:38:in `call'
+  rack (2.0.3) lib/rack/head.rb:12:in `call'
+  rack (2.0.3) lib/rack/session/abstract/id.rb:232:in `context'
+  rack (2.0.3) lib/rack/session/abstract/id.rb:226:in `call'
+  actionpack (5.1.4) lib/action_dispatch/middleware/cookies.rb:613:in `call'
+  activerecord (5.1.4) lib/active_record/migration.rb:556:in `call'
+  actionpack (5.1.4) lib/action_dispatch/middleware/callbacks.rb:26:in `block in call'
+  activesupport (5.1.4) lib/active_support/callbacks.rb:97:in `run_callbacks'
+  actionpack (5.1.4) lib/action_dispatch/middleware/callbacks.rb:24:in `call'
+  actionpack (5.1.4) lib/action_dispatch/middleware/executor.rb:12:in `call'
+  better_errors (2.3.0) lib/better_errors/middleware.rb:84:in `protected_app_call'
+  better_errors (2.3.0) lib/better_errors/middleware.rb:79:in `better_errors_call'
+  better_errors (2.3.0) lib/better_errors/middleware.rb:57:in `call'
+  actionpack (5.1.4) lib/action_dispatch/middleware/debug_exceptions.rb:59:in `call'
+  web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+  web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+  web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+  actionpack (5.1.4) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+  railties (5.1.4) lib/rails/rack/logger.rb:36:in `call_app'
+  railties (5.1.4) lib/rails/rack/logger.rb:24:in `block in call'
+  activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+  activesupport (5.1.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `tagged'
+  railties (5.1.4) lib/rails/rack/logger.rb:24:in `call'
+  sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+  actionpack (5.1.4) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+  actionpack (5.1.4) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+  rack (2.0.3) lib/rack/method_override.rb:22:in `call'
+  rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+  activesupport (5.1.4) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+  actionpack (5.1.4) lib/action_dispatch/middleware/executor.rb:12:in `call'
+  actionpack (5.1.4) lib/action_dispatch/middleware/static.rb:125:in `call'
+  rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+  railties (5.1.4) lib/rails/engine.rb:522:in `call'
+  puma (3.10.0) lib/puma/configuration.rb:225:in `call'
+  puma (3.10.0) lib/puma/server.rb:605:in `handle_request'
+  puma (3.10.0) lib/puma/server.rb:437:in `process_client'
+  puma (3.10.0) lib/puma/server.rb:301:in `block in run'
+  puma (3.10.0) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+
+Started POST "/__better_errors/2474ed4c54dae09b/variables" for 127.0.0.1 at 2017-10-12 20:01:31 -0300
+Started GET "/greenhouse/plant_sectors/4/edit" for 127.0.0.1 at 2017-10-12 20:01:35 -0300
+Processing by PlantSectorsController#edit as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mPlantSector Load (0.1ms)[0m  [1m[34mSELECT  "plant_sectors".* FROM "plant_sectors" WHERE "plant_sectors"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mGreenhouse Load (0.2ms)[0m  [1m[34mSELECT  "greenhouses".* FROM "greenhouses" ORDER BY "greenhouses"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  Rendering plant_sectors/edit.html.erb within layouts/application
+  [1m[36mPlant Load (0.3ms)[0m  [1m[34mSELECT "plants".* FROM "plants"[0m
+  Rendered plant_sectors/_form.html.erb (4.3ms)
+  Rendered plant_sectors/edit.html.erb within layouts/application (6.6ms)
+Completed 200 OK in 102ms (Views: 98.8ms | ActiveRecord: 0.7ms)
+
+
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateActionEntries (20171012114355)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.9ms)[0m  [1m[35mDROP TABLE "action_entries"[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[31mDELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = ?[0m  [["version", "20171012114355"]]
+  [1m[35m (2.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_greenhouse_humidity_sensors_on_xtreme_farm_bot_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_greenhouse_humidity_sensors_on_xtreme_farm_bot_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_greenhouse_temperature_sensors_on_xtreme_farm_bot_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_greenhouse_temperature_sensors_on_xtreme_farm_bot_id' AND type='index'
+[0m
+  [1m[35m (0.2ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_greenhouses_on_xtreme_farm_bot_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_greenhouses_on_xtreme_farm_bot_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_plant_sectors_on_greenhouse_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_plant_sectors_on_greenhouse_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_plant_sectors_on_plant_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_plant_sectors_on_plant_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_soil_humidity_sensors_on_xtreme_farm_bot_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_soil_humidity_sensors_on_xtreme_farm_bot_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_soil_nutrients_sensors_on_xtreme_farm_bot_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_soil_nutrients_sensors_on_xtreme_farm_bot_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateSoilNutrientsSensors (20171010155906)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.9ms)[0m  [1m[35mDROP TABLE "soil_nutrients_sensors"[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[31mDELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = ?[0m  [["version", "20171010155906"]]
+  [1m[35m (2.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_greenhouse_humidity_sensors_on_xtreme_farm_bot_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_greenhouse_humidity_sensors_on_xtreme_farm_bot_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_greenhouse_temperature_sensors_on_xtreme_farm_bot_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_greenhouse_temperature_sensors_on_xtreme_farm_bot_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_greenhouses_on_xtreme_farm_bot_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_greenhouses_on_xtreme_farm_bot_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_plant_sectors_on_greenhouse_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_plant_sectors_on_greenhouse_id' AND type='index'
+[0m
+  [1m[35m (0.2ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_plant_sectors_on_plant_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_plant_sectors_on_plant_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_soil_humidity_sensors_on_xtreme_farm_bot_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_soil_humidity_sensors_on_xtreme_farm_bot_id' AND type='index'
+[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateSoilHumiditySensors (20171010155852)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.5ms)[0m  [1m[35mDROP TABLE "soil_humidity_sensors"[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[31mDELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = ?[0m  [["version", "20171010155852"]]
+  [1m[35m (1.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_greenhouse_humidity_sensors_on_xtreme_farm_bot_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_greenhouse_humidity_sensors_on_xtreme_farm_bot_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_greenhouse_temperature_sensors_on_xtreme_farm_bot_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_greenhouse_temperature_sensors_on_xtreme_farm_bot_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_greenhouses_on_xtreme_farm_bot_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_greenhouses_on_xtreme_farm_bot_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_plant_sectors_on_greenhouse_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_plant_sectors_on_greenhouse_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_plant_sectors_on_plant_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_plant_sectors_on_plant_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateGreenhouseTemperatureSensors (20171010155827)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.5ms)[0m  [1m[35mDROP TABLE "greenhouse_temperature_sensors"[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[31mDELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = ?[0m  [["version", "20171010155827"]]
+  [1m[35m (1.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_greenhouse_humidity_sensors_on_xtreme_farm_bot_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_greenhouse_humidity_sensors_on_xtreme_farm_bot_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_greenhouses_on_xtreme_farm_bot_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_greenhouses_on_xtreme_farm_bot_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_plant_sectors_on_greenhouse_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_plant_sectors_on_greenhouse_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_plant_sectors_on_plant_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_plant_sectors_on_plant_id' AND type='index'
+[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateGreenhouseHumiditySensors (20171010155813)
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.7ms)[0m  [1m[35mDROP TABLE "greenhouse_humidity_sensors"[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[31mDELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = ?[0m  [["version", "20171010155813"]]
+  [1m[35m (2.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_greenhouses_on_xtreme_farm_bot_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_greenhouses_on_xtreme_farm_bot_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_plant_sectors_on_greenhouse_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_plant_sectors_on_greenhouse_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_plant_sectors_on_plant_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_plant_sectors_on_plant_id' AND type='index'
+[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateXtremeFarmBots (20171010155234)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.5ms)[0m  [1m[35mDROP TABLE "xtreme_farm_bots"[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[31mDELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = ?[0m  [["version", "20171010155234"]]
+  [1m[35m (1.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_greenhouses_on_xtreme_farm_bot_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_greenhouses_on_xtreme_farm_bot_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_plant_sectors_on_greenhouse_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_plant_sectors_on_greenhouse_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_plant_sectors_on_plant_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_plant_sectors_on_plant_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateGreenhouses (20171010154254)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.7ms)[0m  [1m[35mDROP TABLE "greenhouses"[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[31mDELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = ?[0m  [["version", "20171010154254"]]
+  [1m[35m (1.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_plant_sectors_on_greenhouse_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_plant_sectors_on_greenhouse_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_plant_sectors_on_plant_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_plant_sectors_on_plant_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreatePlantSectors (20171010144644)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.5ms)[0m  [1m[35mDROP TABLE "plant_sectors"[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[31mDELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = ?[0m  [["version", "20171010144644"]]
+  [1m[35m (1.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreatePlants (20171010144556)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.5ms)[0m  [1m[35mDROP TABLE "plants"[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[31mDELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = ?[0m  [["version", "20171010144556"]]
+  [1m[35m (1.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (2.2ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (1.6ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (0)[0m
+  [1m[35m (2.0ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2017-10-12 23:02:45.845238"], ["updated_at", "2017-10-12 23:02:45.845238"]]
+  [1m[35m (1.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (1.9ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (1.7ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (0)[0m
+  [1m[35m (1.9ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2017-10-12 23:02:45.862151"], ["updated_at", "2017-10-12 23:02:45.862151"]]
+  [1m[35m (1.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreatePlants (20171010144556)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.9ms)[0m  [1m[35mCREATE TABLE "plants" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "soil_moisture" integer, "magnesium" integer, "potassium" integer, "iron" integer, "temperature" integer, "humidity" integer, "hours_of_light" integer, "growth_time" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20171010144556"]]
+  [1m[35m (1.9ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreatePlantSectors (20171010144644)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.6ms)[0m  [1m[35mCREATE TABLE "plant_sectors" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "elapsed_time" integer DEFAULT 0, "moisture" integer DEFAULT 10, "magnesium" integer DEFAULT 500, "potassium" integer DEFAULT 500, "iron" integer DEFAULT 500, "plant_id" integer, "greenhouse_id" integer)[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE  INDEX "index_plant_sectors_on_plant_id" ON "plant_sectors" ("plant_id")[0m
+  [1m[35m (0.2ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_plant_sectors_on_plant_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_plant_sectors_on_plant_id' AND type='index'
+[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE  INDEX "index_plant_sectors_on_greenhouse_id" ON "plant_sectors" ("greenhouse_id")[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20171010144644"]]
+  [1m[35m (2.0ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreateGreenhouses (20171010154254)
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.6ms)[0m  [1m[35mCREATE TABLE "greenhouses" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "turn_on_light_time" integer DEFAULT 7, "turn_off_light_time" integer DEFAULT 20, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "xtreme_farm_bot_id" integer)[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE  INDEX "index_greenhouses_on_xtreme_farm_bot_id" ON "greenhouses" ("xtreme_farm_bot_id")[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20171010154254"]]
+  [1m[35m (1.8ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreateXtremeFarmBots (20171010155234)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.6ms)[0m  [1m[35mCREATE TABLE "xtreme_farm_bots" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20171010155234"]]
+  [1m[35m (2.3ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreateGreenhouseHumiditySensors (20171010155813)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.9ms)[0m  [1m[35mCREATE TABLE "greenhouse_humidity_sensors" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "xtreme_farm_bot_id" integer)[0m
+  [1m[35m (0.7ms)[0m  [1m[35mCREATE  INDEX "index_greenhouse_humidity_sensors_on_xtreme_farm_bot_id" ON "greenhouse_humidity_sensors" ("xtreme_farm_bot_id")[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20171010155813"]]
+  [1m[35m (2.5ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreateGreenhouseTemperatureSensors (20171010155827)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCREATE TABLE "greenhouse_temperature_sensors" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "xtreme_farm_bot_id" integer)[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE  INDEX "index_greenhouse_temperature_sensors_on_xtreme_farm_bot_id" ON "greenhouse_temperature_sensors" ("xtreme_farm_bot_id")[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20171010155827"]]
+  [1m[35m (1.6ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreateSoilHumiditySensors (20171010155852)
+  [1m[35m (0.3ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE TABLE "soil_humidity_sensors" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "xtreme_farm_bot_id" integer)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "index_soil_humidity_sensors_on_xtreme_farm_bot_id" ON "soil_humidity_sensors" ("xtreme_farm_bot_id")[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20171010155852"]]
+  [1m[35m (1.8ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreateSoilNutrientsSensors (20171010155906)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE TABLE "soil_nutrients_sensors" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "xtreme_farm_bot_id" integer)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "index_soil_nutrients_sensors_on_xtreme_farm_bot_id" ON "soil_nutrients_sensors" ("xtreme_farm_bot_id")[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20171010155906"]]
+  [1m[35m (1.8ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreateActionEntries (20171012114355)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE TABLE "action_entries" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "description" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20171012114355"]]
+  [1m[35m (1.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_greenhouse_humidity_sensors_on_xtreme_farm_bot_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_greenhouse_humidity_sensors_on_xtreme_farm_bot_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_greenhouse_temperature_sensors_on_xtreme_farm_bot_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_greenhouse_temperature_sensors_on_xtreme_farm_bot_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_greenhouses_on_xtreme_farm_bot_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_greenhouses_on_xtreme_farm_bot_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_plant_sectors_on_greenhouse_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_plant_sectors_on_greenhouse_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_plant_sectors_on_plant_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_plant_sectors_on_plant_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_soil_humidity_sensors_on_xtreme_farm_bot_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_soil_humidity_sensors_on_xtreme_farm_bot_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_soil_nutrients_sensors_on_xtreme_farm_bot_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_soil_nutrients_sensors_on_xtreme_farm_bot_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "action_entries"[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (2.2ms)[0m  [1m[35mCREATE TABLE "action_entries" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "description" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "greenhouse_humidity_sensors"[0m
+  [1m[35m (2.2ms)[0m  [1m[35mCREATE TABLE "greenhouse_humidity_sensors" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "xtreme_farm_bot_id" integer)[0m
+  [1m[35m (1.9ms)[0m  [1m[35mCREATE  INDEX "index_greenhouse_humidity_sensors_on_xtreme_farm_bot_id" ON "greenhouse_humidity_sensors" ("xtreme_farm_bot_id")[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "greenhouse_temperature_sensors"[0m
+  [1m[35m (2.1ms)[0m  [1m[35mCREATE TABLE "greenhouse_temperature_sensors" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "xtreme_farm_bot_id" integer)[0m
+  [1m[35m (2.0ms)[0m  [1m[35mCREATE  INDEX "index_greenhouse_temperature_sensors_on_xtreme_farm_bot_id" ON "greenhouse_temperature_sensors" ("xtreme_farm_bot_id")[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "greenhouses"[0m
+  [1m[35m (2.3ms)[0m  [1m[35mCREATE TABLE "greenhouses" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "turn_on_light_time" integer DEFAULT 7, "turn_off_light_time" integer DEFAULT 20, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "xtreme_farm_bot_id" integer)[0m
+  [1m[35m (1.4ms)[0m  [1m[35mCREATE  INDEX "index_greenhouses_on_xtreme_farm_bot_id" ON "greenhouses" ("xtreme_farm_bot_id")[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE IF EXISTS "plant_sectors"[0m
+  [1m[35m (1.8ms)[0m  [1m[35mCREATE TABLE "plant_sectors" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "elapsed_time" integer DEFAULT 0, "moisture" integer DEFAULT 10, "magnesium" integer DEFAULT 500, "potassium" integer DEFAULT 500, "iron" integer DEFAULT 500, "plant_id" integer, "greenhouse_id" integer)[0m
+  [1m[35m (2.1ms)[0m  [1m[35mCREATE  INDEX "index_plant_sectors_on_greenhouse_id" ON "plant_sectors" ("greenhouse_id")[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_plant_sectors_on_greenhouse_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_plant_sectors_on_greenhouse_id' AND type='index'
+[0m
+  [1m[35m (2.0ms)[0m  [1m[35mCREATE  INDEX "index_plant_sectors_on_plant_id" ON "plant_sectors" ("plant_id")[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE IF EXISTS "plants"[0m
+  [1m[35m (2.0ms)[0m  [1m[35mCREATE TABLE "plants" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "soil_moisture" integer, "magnesium" integer, "potassium" integer, "iron" integer, "temperature" integer, "humidity" integer, "hours_of_light" integer, "growth_time" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "soil_humidity_sensors"[0m
+  [1m[35m (3.8ms)[0m  [1m[35mCREATE TABLE "soil_humidity_sensors" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "xtreme_farm_bot_id" integer)[0m
+  [1m[35m (1.9ms)[0m  [1m[35mCREATE  INDEX "index_soil_humidity_sensors_on_xtreme_farm_bot_id" ON "soil_humidity_sensors" ("xtreme_farm_bot_id")[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE IF EXISTS "soil_nutrients_sensors"[0m
+  [1m[35m (1.9ms)[0m  [1m[35mCREATE TABLE "soil_nutrients_sensors" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "xtreme_farm_bot_id" integer)[0m
+  [1m[35m (1.9ms)[0m  [1m[35mCREATE  INDEX "index_soil_nutrients_sensors_on_xtreme_farm_bot_id" ON "soil_nutrients_sensors" ("xtreme_farm_bot_id")[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE IF EXISTS "xtreme_farm_bots"[0m
+  [1m[35m (1.8ms)[0m  [1m[35mCREATE TABLE "xtreme_farm_bots" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35m (2.1ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (2.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20171012114355)[0m
+  [1m[35m (1.9ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20171010144556),
+(20171010144644),
+(20171010154254),
+(20171010155234),
+(20171010155813),
+(20171010155827),
+(20171010155852),
+(20171010155906);
+
+[0m
+  [1m[35m (2.1ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2017-10-12 23:03:04.520319"], ["updated_at", "2017-10-12 23:03:04.520319"]]
+  [1m[35m (1.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE IF EXISTS "action_entries"[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (1.8ms)[0m  [1m[35mCREATE TABLE "action_entries" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "description" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "greenhouse_humidity_sensors"[0m
+  [1m[35m (2.0ms)[0m  [1m[35mCREATE TABLE "greenhouse_humidity_sensors" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "xtreme_farm_bot_id" integer)[0m
+  [1m[35m (1.6ms)[0m  [1m[35mCREATE  INDEX "index_greenhouse_humidity_sensors_on_xtreme_farm_bot_id" ON "greenhouse_humidity_sensors" ("xtreme_farm_bot_id")[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE IF EXISTS "greenhouse_temperature_sensors"[0m
+  [1m[35m (1.9ms)[0m  [1m[35mCREATE TABLE "greenhouse_temperature_sensors" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "xtreme_farm_bot_id" integer)[0m
+  [1m[35m (2.0ms)[0m  [1m[35mCREATE  INDEX "index_greenhouse_temperature_sensors_on_xtreme_farm_bot_id" ON "greenhouse_temperature_sensors" ("xtreme_farm_bot_id")[0m
+  [1m[35m (0.5ms)[0m  [1m[35mDROP TABLE IF EXISTS "greenhouses"[0m
+  [1m[35m (2.3ms)[0m  [1m[35mCREATE TABLE "greenhouses" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "turn_on_light_time" integer DEFAULT 7, "turn_off_light_time" integer DEFAULT 20, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "xtreme_farm_bot_id" integer)[0m
+  [1m[35m (1.6ms)[0m  [1m[35mCREATE  INDEX "index_greenhouses_on_xtreme_farm_bot_id" ON "greenhouses" ("xtreme_farm_bot_id")[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE IF EXISTS "plant_sectors"[0m
+  [1m[35m (2.0ms)[0m  [1m[35mCREATE TABLE "plant_sectors" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "elapsed_time" integer DEFAULT 0, "moisture" integer DEFAULT 10, "magnesium" integer DEFAULT 500, "potassium" integer DEFAULT 500, "iron" integer DEFAULT 500, "plant_id" integer, "greenhouse_id" integer)[0m
+  [1m[35m (1.9ms)[0m  [1m[35mCREATE  INDEX "index_plant_sectors_on_greenhouse_id" ON "plant_sectors" ("greenhouse_id")[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_plant_sectors_on_greenhouse_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_plant_sectors_on_greenhouse_id' AND type='index'
+[0m
+  [1m[35m (1.8ms)[0m  [1m[35mCREATE  INDEX "index_plant_sectors_on_plant_id" ON "plant_sectors" ("plant_id")[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "plants"[0m
+  [1m[35m (1.9ms)[0m  [1m[35mCREATE TABLE "plants" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "soil_moisture" integer, "magnesium" integer, "potassium" integer, "iron" integer, "temperature" integer, "humidity" integer, "hours_of_light" integer, "growth_time" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "soil_humidity_sensors"[0m
+  [1m[35m (1.9ms)[0m  [1m[35mCREATE TABLE "soil_humidity_sensors" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "xtreme_farm_bot_id" integer)[0m
+  [1m[35m (2.0ms)[0m  [1m[35mCREATE  INDEX "index_soil_humidity_sensors_on_xtreme_farm_bot_id" ON "soil_humidity_sensors" ("xtreme_farm_bot_id")[0m
+  [1m[35m (5.1ms)[0m  [1m[35mDROP TABLE IF EXISTS "soil_nutrients_sensors"[0m
+  [1m[35m (2.1ms)[0m  [1m[35mCREATE TABLE "soil_nutrients_sensors" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "xtreme_farm_bot_id" integer)[0m
+  [1m[35m (2.1ms)[0m  [1m[35mCREATE  INDEX "index_soil_nutrients_sensors_on_xtreme_farm_bot_id" ON "soil_nutrients_sensors" ("xtreme_farm_bot_id")[0m
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE IF EXISTS "xtreme_farm_bots"[0m
+  [1m[35m (1.7ms)[0m  [1m[35mCREATE TABLE "xtreme_farm_bots" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35m (1.9ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (1.6ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20171012114355)[0m
+  [1m[35m (2.0ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20171010144556),
+(20171010144644),
+(20171010154254),
+(20171010155234),
+(20171010155813),
+(20171010155827),
+(20171010155852),
+(20171010155906);
+
+[0m
+  [1m[35m (2.0ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2017-10-12 23:03:04.589869"], ["updated_at", "2017-10-12 23:03:04.589869"]]
+  [1m[35m (1.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "greenhouses" ("created_at", "updated_at") VALUES (?, ?)[0m  [["created_at", "2017-10-12 23:03:04.609855"], ["updated_at", "2017-10-12 23:03:04.609855"]]
+  [1m[35m (1.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPlant Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "plants" WHERE "plants"."name" = ? LIMIT ?[0m  [["name", "Lechuga"], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "plants" ("name", "soil_moisture", "magnesium", "potassium", "iron", "temperature", "humidity", "hours_of_light", "growth_time", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Lechuga"], ["soil_moisture", 40], ["magnesium", 500], ["potassium", 500], ["iron", 500], ["temperature", 40], ["humidity", 40], ["hours_of_light", 10], ["growth_time", 40], ["created_at", "2017-10-12 23:03:04.632146"], ["updated_at", "2017-10-12 23:03:04.632146"]]
+  [1m[35m (1.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPlant Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "plants" WHERE "plants"."name" = ? LIMIT ?[0m  [["name", "Espinaca"], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "plants" ("name", "soil_moisture", "magnesium", "potassium", "iron", "temperature", "humidity", "hours_of_light", "growth_time", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Espinaca"], ["soil_moisture", 30], ["magnesium", 300], ["potassium", 300], ["iron", 300], ["temperature", 30], ["humidity", 50], ["hours_of_light", 10], ["growth_time", 20], ["created_at", "2017-10-12 23:03:04.636573"], ["updated_at", "2017-10-12 23:03:04.636573"]]
+  [1m[35m (1.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "greenhouses" ("created_at", "updated_at") VALUES (?, ?)[0m  [["created_at", "2017-10-12 23:03:12.113705"], ["updated_at", "2017-10-12 23:03:12.113705"]]
+  [1m[35m (1.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPlant Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "plants" WHERE "plants"."name" = ? LIMIT ?[0m  [["name", "Lechuga"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPlant Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "plants" WHERE "plants"."name" = ? LIMIT ?[0m  [["name", "Espinaca"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+Started GET "/" for 127.0.0.1 at 2017-10-12 20:03:13 -0300
+Processing by GreenhousesController#index as HTML
+  [1m[36mGreenhouse Load (0.1ms)[0m  [1m[34mSELECT  "greenhouses".* FROM "greenhouses" ORDER BY "greenhouses"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  Rendering greenhouses/index.html.erb within layouts/application
+  [1m[36mPlantSector Load (0.2ms)[0m  [1m[34mSELECT "plant_sectors".* FROM "plant_sectors" WHERE "plant_sectors"."greenhouse_id" = ?[0m  [["greenhouse_id", 1]]
+  [1m[36mActionEntry Load (0.2ms)[0m  [1m[34mSELECT "action_entries".* FROM "action_entries"[0m
+  Rendered greenhouses/index.html.erb within layouts/application (18.2ms)
+Completed 200 OK in 113ms (Views: 96.1ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/greenhouse/plant_sectors/new" for 127.0.0.1 at 2017-10-12 20:03:16 -0300
+Processing by PlantSectorsController#new as HTML
+  [1m[36mGreenhouse Load (0.2ms)[0m  [1m[34mSELECT  "greenhouses".* FROM "greenhouses" ORDER BY "greenhouses"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  Rendering plant_sectors/new.html.erb within layouts/application
+  [1m[36mPlant Load (0.2ms)[0m  [1m[34mSELECT "plants".* FROM "plants"[0m
+  Rendered plant_sectors/_form.html.erb (19.3ms)
+  Rendered plant_sectors/new.html.erb within layouts/application (21.7ms)
+Completed 200 OK in 100ms (Views: 85.2ms | ActiveRecord: 1.3ms)
+
+
+Started POST "/greenhouse/plant_sectors" for 127.0.0.1 at 2017-10-12 20:03:17 -0300
+Processing by PlantSectorsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"9VZ7m5kAcxtff87wHbtCC2ztySSniyDRWBqO/eM7I+1Gdn8pRDL47QduE6H9Bw6thSUPVHnN4D3BI4Ksbd5kvA==", "plant_sector"=>{"plant_id"=>"1"}, "commit"=>"Create Plant sector"}
+  [1m[36mGreenhouse Load (0.2ms)[0m  [1m[34mSELECT  "greenhouses".* FROM "greenhouses" ORDER BY "greenhouses"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPlant Load (0.2ms)[0m  [1m[34mSELECT  "plants".* FROM "plants" WHERE "plants"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "plant_sectors" ("created_at", "updated_at", "plant_id", "greenhouse_id") VALUES (?, ?, ?, ?)[0m  [["created_at", "2017-10-12 23:03:17.557742"], ["updated_at", "2017-10-12 23:03:17.557742"], ["plant_id", 1], ["greenhouse_id", 1]]
+  [1m[35m (1.8ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 10ms (ActiveRecord: 2.8ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-10-12 20:03:17 -0300
+Processing by GreenhousesController#index as HTML
+  [1m[36mGreenhouse Load (0.2ms)[0m  [1m[34mSELECT  "greenhouses".* FROM "greenhouses" ORDER BY "greenhouses"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  Rendering greenhouses/index.html.erb within layouts/application
+  [1m[36mPlantSector Load (0.2ms)[0m  [1m[34mSELECT "plant_sectors".* FROM "plant_sectors" WHERE "plant_sectors"."greenhouse_id" = ?[0m  [["greenhouse_id", 1]]
+  [1m[36mPlant Load (0.1ms)[0m  [1m[34mSELECT  "plants".* FROM "plants" WHERE "plants"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mActionEntry Load (0.1ms)[0m  [1m[34mSELECT "action_entries".* FROM "action_entries"[0m
+  Rendered greenhouses/index.html.erb within layouts/application (5.3ms)
+Completed 200 OK in 60ms (Views: 57.1ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/greenhouse/plant_sectors/1/edit" for 127.0.0.1 at 2017-10-12 20:03:19 -0300
+Processing by PlantSectorsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPlantSector Load (0.6ms)[0m  [1m[34mSELECT  "plant_sectors".* FROM "plant_sectors" WHERE "plant_sectors"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mGreenhouse Load (0.3ms)[0m  [1m[34mSELECT  "greenhouses".* FROM "greenhouses" ORDER BY "greenhouses"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  Rendering plant_sectors/edit.html.erb within layouts/application
+  [1m[36mPlant Load (0.3ms)[0m  [1m[34mSELECT "plants".* FROM "plants"[0m
+  Rendered plant_sectors/_form.html.erb (4.1ms)
+  Rendered plant_sectors/edit.html.erb within layouts/application (7.3ms)
+Completed 200 OK in 74ms (Views: 65.9ms | ActiveRecord: 1.1ms)
+
+
+Started PATCH "/greenhouse/plant_sectors/1" for 127.0.0.1 at 2017-10-12 20:03:20 -0300
+Processing by PlantSectorsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ZWhbpbROGvXsoBaJYLxnBRDA4xCez28MUKL3HmRUp1RjJUE5lqlcuuRVA4MV4sdpMT/q29CV+OXxILNCoUZIYQ==", "plant_sector"=>{"plant_id"=>"1"}, "commit"=>"Update Plant sector", "id"=>"1"}
+  [1m[36mPlantSector Load (0.1ms)[0m  [1m[34mSELECT  "plant_sectors".* FROM "plant_sectors" WHERE "plant_sectors"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mGreenhouse Load (0.2ms)[0m  [1m[34mSELECT  "greenhouses".* FROM "greenhouses" ORDER BY "greenhouses"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPlant Load (0.1ms)[0m  [1m[34mSELECT  "plants".* FROM "plants" WHERE "plants"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 6ms (ActiveRecord: 0.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-10-12 20:03:20 -0300
+Processing by GreenhousesController#index as HTML
+  [1m[36mGreenhouse Load (0.2ms)[0m  [1m[34mSELECT  "greenhouses".* FROM "greenhouses" ORDER BY "greenhouses"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  Rendering greenhouses/index.html.erb within layouts/application
+  [1m[36mPlantSector Load (0.1ms)[0m  [1m[34mSELECT "plant_sectors".* FROM "plant_sectors" WHERE "plant_sectors"."greenhouse_id" = ?[0m  [["greenhouse_id", 1]]
+  [1m[36mPlant Load (0.1ms)[0m  [1m[34mSELECT  "plants".* FROM "plants" WHERE "plants"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mActionEntry Load (0.1ms)[0m  [1m[34mSELECT "action_entries".* FROM "action_entries"[0m
+  Rendered greenhouses/index.html.erb within layouts/application (4.0ms)
+Completed 200 OK in 65ms (Views: 62.1ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/greenhouse/plant_sectors/1/edit" for 127.0.0.1 at 2017-10-12 20:03:40 -0300
+Processing by PlantSectorsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPlantSector Load (0.1ms)[0m  [1m[34mSELECT  "plant_sectors".* FROM "plant_sectors" WHERE "plant_sectors"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mGreenhouse Load (0.1ms)[0m  [1m[34mSELECT  "greenhouses".* FROM "greenhouses" ORDER BY "greenhouses"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  Rendering plant_sectors/edit.html.erb within layouts/application
+  [1m[36mPlant Load (0.3ms)[0m  [1m[34mSELECT "plants".* FROM "plants"[0m
+  Rendered plant_sectors/_form.html.erb (18.2ms)
+  Rendered plant_sectors/edit.html.erb within layouts/application (19.7ms)
+Completed 200 OK in 110ms (Views: 84.1ms | ActiveRecord: 2.7ms)
+
+
+Started PATCH "/greenhouse/plant_sectors/1" for 127.0.0.1 at 2017-10-12 20:03:43 -0300
+Processing by PlantSectorsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"snXn/rpTWRGQjDMcWJGRQHHd6y7aQ3kSlZPbxwW6AHq0OP1imLQfXph5JhYtzzEsUCLi5ZQZ7vs0EZ+bwKjvTw==", "plant_sector"=>{"plant_id"=>"2"}, "commit"=>"Update Plant sector", "id"=>"1"}
+  [1m[36mPlantSector Load (0.2ms)[0m  [1m[34mSELECT  "plant_sectors".* FROM "plant_sectors" WHERE "plant_sectors"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mGreenhouse Load (0.2ms)[0m  [1m[34mSELECT  "greenhouses".* FROM "greenhouses" ORDER BY "greenhouses"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPlant Load (0.2ms)[0m  [1m[34mSELECT  "plants".* FROM "plants" WHERE "plants"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+Completed 500 Internal Server Error in 16ms (ActiveRecord: 0.7ms)
+
+
+
+NameError - undefined local variable or method `fgsfd' for #<PlantSector:0x00007fb2cdb58bf0>:
+  activemodel (5.1.4) lib/active_model/attribute_methods.rb:432:in `method_missing'
+  app/models/plant_sector.rb:7:in `reset_time'
+  activesupport (5.1.4) lib/active_support/callbacks.rb:413:in `block in make_lambda'
+  activesupport (5.1.4) lib/active_support/callbacks.rb:178:in `block (2 levels) in halting_and_conditional'
+  activesupport (5.1.4) lib/active_support/callbacks.rb:601:in `block (2 levels) in default_terminator'
+  activesupport (5.1.4) lib/active_support/callbacks.rb:600:in `block in default_terminator'
+  activesupport (5.1.4) lib/active_support/callbacks.rb:179:in `block in halting_and_conditional'
+  activesupport (5.1.4) lib/active_support/callbacks.rb:507:in `block in invoke_before'
+  activesupport (5.1.4) lib/active_support/callbacks.rb:507:in `invoke_before'
+  activesupport (5.1.4) lib/active_support/callbacks.rb:130:in `run_callbacks'
+  activesupport (5.1.4) lib/active_support/callbacks.rb:827:in `_run_validate_callbacks'
+  activemodel (5.1.4) lib/active_model/validations.rb:405:in `run_validations!'
+  activemodel (5.1.4) lib/active_model/validations/callbacks.rb:110:in `block in run_validations!'
+  activesupport (5.1.4) lib/active_support/callbacks.rb:97:in `run_callbacks'
+  activesupport (5.1.4) lib/active_support/callbacks.rb:827:in `_run_validation_callbacks'
+  activemodel (5.1.4) lib/active_model/validations/callbacks.rb:110:in `run_validations!'
+  activemodel (5.1.4) lib/active_model/validations.rb:335:in `valid?'
+  activerecord (5.1.4) lib/active_record/validations.rb:65:in `valid?'
+  activerecord (5.1.4) lib/active_record/validations.rb:82:in `perform_validations'
+  activerecord (5.1.4) lib/active_record/validations.rb:44:in `save'
+  activerecord (5.1.4) lib/active_record/attribute_methods/dirty.rb:35:in `save'
+  activerecord (5.1.4) lib/active_record/transactions.rb:308:in `block (2 levels) in save'
+  activerecord (5.1.4) lib/active_record/transactions.rb:384:in `block in with_transaction_returning_status'
+  activerecord (5.1.4) lib/active_record/connection_adapters/abstract/database_statements.rb:233:in `transaction'
+  activerecord (5.1.4) lib/active_record/transactions.rb:210:in `transaction'
+  activerecord (5.1.4) lib/active_record/transactions.rb:381:in `with_transaction_returning_status'
+  activerecord (5.1.4) lib/active_record/transactions.rb:308:in `block in save'
+  activerecord (5.1.4) lib/active_record/transactions.rb:323:in `rollback_active_record_state!'
+  activerecord (5.1.4) lib/active_record/transactions.rb:307:in `save'
+  activerecord (5.1.4) lib/active_record/suppressor.rb:42:in `save'
+  activerecord (5.1.4) lib/active_record/persistence.rb:285:in `block in update'
+  activerecord (5.1.4) lib/active_record/transactions.rb:384:in `block in with_transaction_returning_status'
+  activerecord (5.1.4) lib/active_record/connection_adapters/abstract/database_statements.rb:235:in `block in transaction'
+  activerecord (5.1.4) lib/active_record/connection_adapters/abstract/transaction.rb:194:in `block in within_new_transaction'
+  /Users/gabi/.rbenv/versions/2.4.2/lib/ruby/2.4.0/monitor.rb:214:in `mon_synchronize'
+  activerecord (5.1.4) lib/active_record/connection_adapters/abstract/transaction.rb:191:in `within_new_transaction'
+  activerecord (5.1.4) lib/active_record/connection_adapters/abstract/database_statements.rb:235:in `transaction'
+  activerecord (5.1.4) lib/active_record/transactions.rb:210:in `transaction'
+  activerecord (5.1.4) lib/active_record/transactions.rb:381:in `with_transaction_returning_status'
+  activerecord (5.1.4) lib/active_record/persistence.rb:283:in `update'
+  app/controllers/plant_sectors_controller.rb:45:in `block in update'
+  actionpack (5.1.4) lib/action_controller/metal/mime_responds.rb:195:in `respond_to'
+  app/controllers/plant_sectors_controller.rb:44:in `update'
+  actionpack (5.1.4) lib/action_controller/metal/basic_implicit_render.rb:4:in `send_action'
+  actionpack (5.1.4) lib/abstract_controller/base.rb:186:in `process_action'
+  actionpack (5.1.4) lib/action_controller/metal/rendering.rb:30:in `process_action'
+  actionpack (5.1.4) lib/abstract_controller/callbacks.rb:20:in `block in process_action'
+  activesupport (5.1.4) lib/active_support/callbacks.rb:131:in `run_callbacks'
+  actionpack (5.1.4) lib/abstract_controller/callbacks.rb:19:in `process_action'
+  actionpack (5.1.4) lib/action_controller/metal/rescue.rb:20:in `process_action'
+  actionpack (5.1.4) lib/action_controller/metal/instrumentation.rb:32:in `block in process_action'
+  activesupport (5.1.4) lib/active_support/notifications.rb:166:in `block in instrument'
+  activesupport (5.1.4) lib/active_support/notifications/instrumenter.rb:21:in `instrument'
+  activesupport (5.1.4) lib/active_support/notifications.rb:166:in `instrument'
+  actionpack (5.1.4) lib/action_controller/metal/instrumentation.rb:30:in `process_action'
+  actionpack (5.1.4) lib/action_controller/metal/params_wrapper.rb:252:in `process_action'
+  activerecord (5.1.4) lib/active_record/railties/controller_runtime.rb:22:in `process_action'
+  actionpack (5.1.4) lib/abstract_controller/base.rb:124:in `process'
+  actionview (5.1.4) lib/action_view/rendering.rb:30:in `process'
+  actionpack (5.1.4) lib/action_controller/metal.rb:189:in `dispatch'
+  actionpack (5.1.4) lib/action_controller/metal.rb:253:in `dispatch'
+  actionpack (5.1.4) lib/action_dispatch/routing/route_set.rb:49:in `dispatch'
+  actionpack (5.1.4) lib/action_dispatch/routing/route_set.rb:31:in `serve'
+  actionpack (5.1.4) lib/action_dispatch/journey/router.rb:50:in `block in serve'
+  actionpack (5.1.4) lib/action_dispatch/journey/router.rb:33:in `serve'
+  actionpack (5.1.4) lib/action_dispatch/routing/route_set.rb:834:in `call'
+  rack (2.0.3) lib/rack/etag.rb:25:in `call'
+  rack (2.0.3) lib/rack/conditional_get.rb:38:in `call'
+  rack (2.0.3) lib/rack/head.rb:12:in `call'
+  rack (2.0.3) lib/rack/session/abstract/id.rb:232:in `context'
+  rack (2.0.3) lib/rack/session/abstract/id.rb:226:in `call'
+  actionpack (5.1.4) lib/action_dispatch/middleware/cookies.rb:613:in `call'
+  activerecord (5.1.4) lib/active_record/migration.rb:556:in `call'
+  actionpack (5.1.4) lib/action_dispatch/middleware/callbacks.rb:26:in `block in call'
+  activesupport (5.1.4) lib/active_support/callbacks.rb:97:in `run_callbacks'
+  actionpack (5.1.4) lib/action_dispatch/middleware/callbacks.rb:24:in `call'
+  actionpack (5.1.4) lib/action_dispatch/middleware/executor.rb:12:in `call'
+  better_errors (2.3.0) lib/better_errors/middleware.rb:84:in `protected_app_call'
+  better_errors (2.3.0) lib/better_errors/middleware.rb:79:in `better_errors_call'
+  better_errors (2.3.0) lib/better_errors/middleware.rb:57:in `call'
+  actionpack (5.1.4) lib/action_dispatch/middleware/debug_exceptions.rb:59:in `call'
+  web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+  web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+  web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+  actionpack (5.1.4) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+  railties (5.1.4) lib/rails/rack/logger.rb:36:in `call_app'
+  railties (5.1.4) lib/rails/rack/logger.rb:24:in `block in call'
+  activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+  activesupport (5.1.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `tagged'
+  railties (5.1.4) lib/rails/rack/logger.rb:24:in `call'
+  sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+  actionpack (5.1.4) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+  actionpack (5.1.4) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+  rack (2.0.3) lib/rack/method_override.rb:22:in `call'
+  rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+  activesupport (5.1.4) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+  actionpack (5.1.4) lib/action_dispatch/middleware/executor.rb:12:in `call'
+  actionpack (5.1.4) lib/action_dispatch/middleware/static.rb:125:in `call'
+  rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+  railties (5.1.4) lib/rails/engine.rb:522:in `call'
+  puma (3.10.0) lib/puma/configuration.rb:225:in `call'
+  puma (3.10.0) lib/puma/server.rb:605:in `handle_request'
+  puma (3.10.0) lib/puma/server.rb:437:in `process_client'
+  puma (3.10.0) lib/puma/server.rb:301:in `block in run'
+  puma (3.10.0) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+
+Started POST "/__better_errors/ba4abedcaba3e3ac/variables" for 127.0.0.1 at 2017-10-12 20:03:43 -0300
+  [1m[36mPlant Load (0.2ms)[0m  [1m[34mSELECT  "plants".* FROM "plants" WHERE "plants"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 11]]
+Started POST "/__better_errors/ba4abedcaba3e3ac/eval" for 127.0.0.1 at 2017-10-12 20:03:52 -0300
+Started POST "/__better_errors/ba4abedcaba3e3ac/eval" for 127.0.0.1 at 2017-10-12 20:04:02 -0300
+Started GET "/greenhouse/plant_sectors/1/edit" for 127.0.0.1 at 2017-10-12 20:04:26 -0300
+Processing by PlantSectorsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPlantSector Load (0.2ms)[0m  [1m[34mSELECT  "plant_sectors".* FROM "plant_sectors" WHERE "plant_sectors"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mGreenhouse Load (0.4ms)[0m  [1m[34mSELECT  "greenhouses".* FROM "greenhouses" ORDER BY "greenhouses"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  Rendering plant_sectors/edit.html.erb within layouts/application
+  [1m[36mPlant Load (0.2ms)[0m  [1m[34mSELECT "plants".* FROM "plants"[0m
+  Rendered plant_sectors/_form.html.erb (4.1ms)
+  Rendered plant_sectors/edit.html.erb within layouts/application (7.4ms)
+Completed 200 OK in 90ms (Views: 84.0ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-10-12 20:04:28 -0300
+Processing by GreenhousesController#index as HTML
+  [1m[36mGreenhouse Load (0.2ms)[0m  [1m[34mSELECT  "greenhouses".* FROM "greenhouses" ORDER BY "greenhouses"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  Rendering greenhouses/index.html.erb within layouts/application
+  [1m[36mPlantSector Load (0.2ms)[0m  [1m[34mSELECT "plant_sectors".* FROM "plant_sectors" WHERE "plant_sectors"."greenhouse_id" = ?[0m  [["greenhouse_id", 1]]
+  [1m[36mPlant Load (0.1ms)[0m  [1m[34mSELECT  "plants".* FROM "plants" WHERE "plants"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mActionEntry Load (0.1ms)[0m  [1m[34mSELECT "action_entries".* FROM "action_entries"[0m
+  Rendered greenhouses/index.html.erb within layouts/application (6.5ms)
+Completed 200 OK in 73ms (Views: 67.4ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/greenhouse/plant_sectors/1/edit" for 127.0.0.1 at 2017-10-12 20:04:35 -0300
+Processing by PlantSectorsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPlantSector Load (0.7ms)[0m  [1m[34mSELECT  "plant_sectors".* FROM "plant_sectors" WHERE "plant_sectors"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mGreenhouse Load (0.3ms)[0m  [1m[34mSELECT  "greenhouses".* FROM "greenhouses" ORDER BY "greenhouses"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  Rendering plant_sectors/edit.html.erb within layouts/application
+  [1m[36mPlant Load (0.3ms)[0m  [1m[34mSELECT "plants".* FROM "plants"[0m
+  Rendered plant_sectors/_form.html.erb (2.5ms)
+  Rendered plant_sectors/edit.html.erb within layouts/application (4.4ms)
+Completed 200 OK in 67ms (Views: 61.2ms | ActiveRecord: 1.2ms)
+
+
+Started PATCH "/greenhouse/plant_sectors/1" for 127.0.0.1 at 2017-10-12 20:04:39 -0300
+Processing by PlantSectorsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"5Yy76deRubSACVzUQgy+SBK3RXU2c6HZeEQZUlOMGF/jwaF19Xb/+4j8Sd43Uh4kM0hMvngpNjDZxl0Olp73ag==", "plant_sector"=>{"plant_id"=>"2"}, "commit"=>"Update Plant sector", "id"=>"1"}
+  [1m[36mPlantSector Load (0.1ms)[0m  [1m[34mSELECT  "plant_sectors".* FROM "plant_sectors" WHERE "plant_sectors"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mGreenhouse Load (0.1ms)[0m  [1m[34mSELECT  "greenhouses".* FROM "greenhouses" ORDER BY "greenhouses"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPlant Load (0.1ms)[0m  [1m[34mSELECT  "plants".* FROM "plants" WHERE "plants"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+Completed 500 Internal Server Error in 11ms (ActiveRecord: 0.5ms)
+
+
+
+NameError - undefined local variable or method `fgsfd' for #<PlantSector:0x00007fb2cfb75f28>:
+  activemodel (5.1.4) lib/active_model/attribute_methods.rb:432:in `method_missing'
+  app/models/plant_sector.rb:7:in `reset_time'
+  activesupport (5.1.4) lib/active_support/callbacks.rb:413:in `block in make_lambda'
+  activesupport (5.1.4) lib/active_support/callbacks.rb:178:in `block (2 levels) in halting_and_conditional'
+  activesupport (5.1.4) lib/active_support/callbacks.rb:601:in `block (2 levels) in default_terminator'
+  activesupport (5.1.4) lib/active_support/callbacks.rb:600:in `block in default_terminator'
+  activesupport (5.1.4) lib/active_support/callbacks.rb:179:in `block in halting_and_conditional'
+  activesupport (5.1.4) lib/active_support/callbacks.rb:507:in `block in invoke_before'
+  activesupport (5.1.4) lib/active_support/callbacks.rb:507:in `invoke_before'
+  activesupport (5.1.4) lib/active_support/callbacks.rb:130:in `run_callbacks'
+  activesupport (5.1.4) lib/active_support/callbacks.rb:827:in `_run_validate_callbacks'
+  activemodel (5.1.4) lib/active_model/validations.rb:405:in `run_validations!'
+  activemodel (5.1.4) lib/active_model/validations/callbacks.rb:110:in `block in run_validations!'
+  activesupport (5.1.4) lib/active_support/callbacks.rb:97:in `run_callbacks'
+  activesupport (5.1.4) lib/active_support/callbacks.rb:827:in `_run_validation_callbacks'
+  activemodel (5.1.4) lib/active_model/validations/callbacks.rb:110:in `run_validations!'
+  activemodel (5.1.4) lib/active_model/validations.rb:335:in `valid?'
+  activerecord (5.1.4) lib/active_record/validations.rb:65:in `valid?'
+  activerecord (5.1.4) lib/active_record/validations.rb:82:in `perform_validations'
+  activerecord (5.1.4) lib/active_record/validations.rb:44:in `save'
+  activerecord (5.1.4) lib/active_record/attribute_methods/dirty.rb:35:in `save'
+  activerecord (5.1.4) lib/active_record/transactions.rb:308:in `block (2 levels) in save'
+  activerecord (5.1.4) lib/active_record/transactions.rb:384:in `block in with_transaction_returning_status'
+  activerecord (5.1.4) lib/active_record/connection_adapters/abstract/database_statements.rb:233:in `transaction'
+  activerecord (5.1.4) lib/active_record/transactions.rb:210:in `transaction'
+  activerecord (5.1.4) lib/active_record/transactions.rb:381:in `with_transaction_returning_status'
+  activerecord (5.1.4) lib/active_record/transactions.rb:308:in `block in save'
+  activerecord (5.1.4) lib/active_record/transactions.rb:323:in `rollback_active_record_state!'
+  activerecord (5.1.4) lib/active_record/transactions.rb:307:in `save'
+  activerecord (5.1.4) lib/active_record/suppressor.rb:42:in `save'
+  activerecord (5.1.4) lib/active_record/persistence.rb:285:in `block in update'
+  activerecord (5.1.4) lib/active_record/transactions.rb:384:in `block in with_transaction_returning_status'
+  activerecord (5.1.4) lib/active_record/connection_adapters/abstract/database_statements.rb:235:in `block in transaction'
+  activerecord (5.1.4) lib/active_record/connection_adapters/abstract/transaction.rb:194:in `block in within_new_transaction'
+  /Users/gabi/.rbenv/versions/2.4.2/lib/ruby/2.4.0/monitor.rb:214:in `mon_synchronize'
+  activerecord (5.1.4) lib/active_record/connection_adapters/abstract/transaction.rb:191:in `within_new_transaction'
+  activerecord (5.1.4) lib/active_record/connection_adapters/abstract/database_statements.rb:235:in `transaction'
+  activerecord (5.1.4) lib/active_record/transactions.rb:210:in `transaction'
+  activerecord (5.1.4) lib/active_record/transactions.rb:381:in `with_transaction_returning_status'
+  activerecord (5.1.4) lib/active_record/persistence.rb:283:in `update'
+  app/controllers/plant_sectors_controller.rb:45:in `block in update'
+  actionpack (5.1.4) lib/action_controller/metal/mime_responds.rb:195:in `respond_to'
+  app/controllers/plant_sectors_controller.rb:44:in `update'
+  actionpack (5.1.4) lib/action_controller/metal/basic_implicit_render.rb:4:in `send_action'
+  actionpack (5.1.4) lib/abstract_controller/base.rb:186:in `process_action'
+  actionpack (5.1.4) lib/action_controller/metal/rendering.rb:30:in `process_action'
+  actionpack (5.1.4) lib/abstract_controller/callbacks.rb:20:in `block in process_action'
+  activesupport (5.1.4) lib/active_support/callbacks.rb:131:in `run_callbacks'
+  actionpack (5.1.4) lib/abstract_controller/callbacks.rb:19:in `process_action'
+  actionpack (5.1.4) lib/action_controller/metal/rescue.rb:20:in `process_action'
+  actionpack (5.1.4) lib/action_controller/metal/instrumentation.rb:32:in `block in process_action'
+  activesupport (5.1.4) lib/active_support/notifications.rb:166:in `block in instrument'
+  activesupport (5.1.4) lib/active_support/notifications/instrumenter.rb:21:in `instrument'
+  activesupport (5.1.4) lib/active_support/notifications.rb:166:in `instrument'
+  actionpack (5.1.4) lib/action_controller/metal/instrumentation.rb:30:in `process_action'
+  actionpack (5.1.4) lib/action_controller/metal/params_wrapper.rb:252:in `process_action'
+  activerecord (5.1.4) lib/active_record/railties/controller_runtime.rb:22:in `process_action'
+  actionpack (5.1.4) lib/abstract_controller/base.rb:124:in `process'
+  actionview (5.1.4) lib/action_view/rendering.rb:30:in `process'
+  actionpack (5.1.4) lib/action_controller/metal.rb:189:in `dispatch'
+  actionpack (5.1.4) lib/action_controller/metal.rb:253:in `dispatch'
+  actionpack (5.1.4) lib/action_dispatch/routing/route_set.rb:49:in `dispatch'
+  actionpack (5.1.4) lib/action_dispatch/routing/route_set.rb:31:in `serve'
+  actionpack (5.1.4) lib/action_dispatch/journey/router.rb:50:in `block in serve'
+  actionpack (5.1.4) lib/action_dispatch/journey/router.rb:33:in `serve'
+  actionpack (5.1.4) lib/action_dispatch/routing/route_set.rb:834:in `call'
+  rack (2.0.3) lib/rack/etag.rb:25:in `call'
+  rack (2.0.3) lib/rack/conditional_get.rb:38:in `call'
+  rack (2.0.3) lib/rack/head.rb:12:in `call'
+  rack (2.0.3) lib/rack/session/abstract/id.rb:232:in `context'
+  rack (2.0.3) lib/rack/session/abstract/id.rb:226:in `call'
+  actionpack (5.1.4) lib/action_dispatch/middleware/cookies.rb:613:in `call'
+  activerecord (5.1.4) lib/active_record/migration.rb:556:in `call'
+  actionpack (5.1.4) lib/action_dispatch/middleware/callbacks.rb:26:in `block in call'
+  activesupport (5.1.4) lib/active_support/callbacks.rb:97:in `run_callbacks'
+  actionpack (5.1.4) lib/action_dispatch/middleware/callbacks.rb:24:in `call'
+  actionpack (5.1.4) lib/action_dispatch/middleware/executor.rb:12:in `call'
+  better_errors (2.3.0) lib/better_errors/middleware.rb:84:in `protected_app_call'
+  better_errors (2.3.0) lib/better_errors/middleware.rb:79:in `better_errors_call'
+  better_errors (2.3.0) lib/better_errors/middleware.rb:57:in `call'
+  actionpack (5.1.4) lib/action_dispatch/middleware/debug_exceptions.rb:59:in `call'
+  web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+  web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+  web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+  actionpack (5.1.4) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+  railties (5.1.4) lib/rails/rack/logger.rb:36:in `call_app'
+  railties (5.1.4) lib/rails/rack/logger.rb:24:in `block in call'
+  activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+  activesupport (5.1.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `tagged'
+  railties (5.1.4) lib/rails/rack/logger.rb:24:in `call'
+  sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+  actionpack (5.1.4) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+  actionpack (5.1.4) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+  rack (2.0.3) lib/rack/method_override.rb:22:in `call'
+  rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+  activesupport (5.1.4) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+  actionpack (5.1.4) lib/action_dispatch/middleware/executor.rb:12:in `call'
+  actionpack (5.1.4) lib/action_dispatch/middleware/static.rb:125:in `call'
+  rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+  railties (5.1.4) lib/rails/engine.rb:522:in `call'
+  puma (3.10.0) lib/puma/configuration.rb:225:in `call'
+  puma (3.10.0) lib/puma/server.rb:605:in `handle_request'
+  puma (3.10.0) lib/puma/server.rb:437:in `process_client'
+  puma (3.10.0) lib/puma/server.rb:301:in `block in run'
+  puma (3.10.0) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+
+Started POST "/__better_errors/17a6cab2c3a067b4/variables" for 127.0.0.1 at 2017-10-12 20:04:39 -0300
+  [1m[36mPlant Load (0.2ms)[0m  [1m[34mSELECT  "plants".* FROM "plants" WHERE "plants"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 11]]
+Started POST "/__better_errors/17a6cab2c3a067b4/eval" for 127.0.0.1 at 2017-10-12 20:04:47 -0300
+Started POST "/__better_errors/17a6cab2c3a067b4/eval" for 127.0.0.1 at 2017-10-12 20:04:55 -0300
+Started POST "/__better_errors/17a6cab2c3a067b4/eval" for 127.0.0.1 at 2017-10-12 20:05:05 -0300
+Started POST "/__better_errors/17a6cab2c3a067b4/eval" for 127.0.0.1 at 2017-10-12 20:05:22 -0300
+Started POST "/__better_errors/17a6cab2c3a067b4/eval" for 127.0.0.1 at 2017-10-12 20:05:40 -0300
+Started POST "/__better_errors/17a6cab2c3a067b4/eval" for 127.0.0.1 at 2017-10-12 20:06:18 -0300
+Started POST "/__better_errors/17a6cab2c3a067b4/eval" for 127.0.0.1 at 2017-10-12 20:06:27 -0300
+Started PATCH "/greenhouse/plant_sectors/1" for 127.0.0.1 at 2017-10-12 20:07:28 -0300
+Processing by PlantSectorsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"5Yy76deRubSACVzUQgy+SBK3RXU2c6HZeEQZUlOMGF/jwaF19Xb/+4j8Sd43Uh4kM0hMvngpNjDZxl0Olp73ag==", "plant_sector"=>{"plant_id"=>"2"}, "commit"=>"Update Plant sector", "id"=>"1"}
+  [1m[36mPlantSector Load (0.1ms)[0m  [1m[34mSELECT  "plant_sectors".* FROM "plant_sectors" WHERE "plant_sectors"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mGreenhouse Load (0.1ms)[0m  [1m[34mSELECT  "greenhouses".* FROM "greenhouses" ORDER BY "greenhouses"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPlant Load (0.1ms)[0m  [1m[34mSELECT  "plants".* FROM "plants" WHERE "plants"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[33mUPDATE "plant_sectors" SET "plant_id" = ?, "updated_at" = ? WHERE "plant_sectors"."id" = ?[0m  [["plant_id", 2], ["updated_at", "2017-10-12 23:07:28.778797"], ["id", 1]]
+  [1m[35m (1.8ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 45ms (ActiveRecord: 4.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-10-12 20:07:29 -0300
+Processing by GreenhousesController#index as HTML
+  [1m[36mGreenhouse Load (0.2ms)[0m  [1m[34mSELECT  "greenhouses".* FROM "greenhouses" ORDER BY "greenhouses"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  Rendering greenhouses/index.html.erb within layouts/application
+  [1m[36mPlantSector Load (0.2ms)[0m  [1m[34mSELECT "plant_sectors".* FROM "plant_sectors" WHERE "plant_sectors"."greenhouse_id" = ?[0m  [["greenhouse_id", 1]]
+  [1m[36mPlant Load (0.1ms)[0m  [1m[34mSELECT  "plants".* FROM "plants" WHERE "plants"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mActionEntry Load (0.1ms)[0m  [1m[34mSELECT "action_entries".* FROM "action_entries"[0m
+  Rendered greenhouses/index.html.erb within layouts/application (6.4ms)
+Completed 200 OK in 74ms (Views: 69.5ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/greenhouse/environment_aging" for 127.0.0.1 at 2017-10-12 20:07:37 -0300
+Processing by XtremeFarmBotController#environment_aging as HTML
+  [1m[36mPlantSector Load (0.2ms)[0m  [1m[34mSELECT "plant_sectors".* FROM "plant_sectors"[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPlant Load (0.1ms)[0m  [1m[34mSELECT  "plants".* FROM "plants" WHERE "plants"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[33mUPDATE "plant_sectors" SET "elapsed_time" = ?, "moisture" = ?, "magnesium" = ?, "potassium" = ?, "iron" = ?, "updated_at" = ? WHERE "plant_sectors"."id" = ?[0m  [["elapsed_time", 1], ["moisture", 9], ["magnesium", 164], ["potassium", 409], ["iron", 66], ["updated_at", "2017-10-12 23:07:37.917320"], ["id", 1]]
+  [1m[35m (1.5ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 7ms (ActiveRecord: 2.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-10-12 20:07:37 -0300
+Processing by GreenhousesController#index as HTML
+  [1m[36mGreenhouse Load (0.2ms)[0m  [1m[34mSELECT  "greenhouses".* FROM "greenhouses" ORDER BY "greenhouses"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  Rendering greenhouses/index.html.erb within layouts/application
+  [1m[36mPlantSector Load (0.1ms)[0m  [1m[34mSELECT "plant_sectors".* FROM "plant_sectors" WHERE "plant_sectors"."greenhouse_id" = ?[0m  [["greenhouse_id", 1]]
+  [1m[36mPlant Load (0.1ms)[0m  [1m[34mSELECT  "plants".* FROM "plants" WHERE "plants"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mActionEntry Load (0.2ms)[0m  [1m[34mSELECT "action_entries".* FROM "action_entries"[0m
+  Rendered greenhouses/index.html.erb within layouts/application (5.0ms)
+Completed 200 OK in 90ms (Views: 87.3ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/greenhouse/environment_aging" for 127.0.0.1 at 2017-10-12 20:07:39 -0300
+Processing by XtremeFarmBotController#environment_aging as HTML
+  [1m[36mPlantSector Load (0.3ms)[0m  [1m[34mSELECT "plant_sectors".* FROM "plant_sectors"[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPlant Load (0.1ms)[0m  [1m[34mSELECT  "plants".* FROM "plants" WHERE "plants"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[33mUPDATE "plant_sectors" SET "elapsed_time" = ?, "moisture" = ?, "magnesium" = ?, "potassium" = ?, "iron" = ?, "updated_at" = ? WHERE "plant_sectors"."id" = ?[0m  [["elapsed_time", 2], ["moisture", 2], ["magnesium", 110], ["potassium", 328], ["iron", 61], ["updated_at", "2017-10-12 23:07:39.187854"], ["id", 1]]
+  [1m[35m (1.8ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 8ms (ActiveRecord: 2.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-10-12 20:07:39 -0300
+Processing by GreenhousesController#index as HTML
+  [1m[36mGreenhouse Load (0.2ms)[0m  [1m[34mSELECT  "greenhouses".* FROM "greenhouses" ORDER BY "greenhouses"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  Rendering greenhouses/index.html.erb within layouts/application
+  [1m[36mPlantSector Load (0.2ms)[0m  [1m[34mSELECT "plant_sectors".* FROM "plant_sectors" WHERE "plant_sectors"."greenhouse_id" = ?[0m  [["greenhouse_id", 1]]
+  [1m[36mPlant Load (0.2ms)[0m  [1m[34mSELECT  "plants".* FROM "plants" WHERE "plants"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mActionEntry Load (0.2ms)[0m  [1m[34mSELECT "action_entries".* FROM "action_entries"[0m
+  Rendered greenhouses/index.html.erb within layouts/application (7.2ms)
+Completed 200 OK in 79ms (Views: 76.6ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/greenhouse/plant_sectors/1/edit" for 127.0.0.1 at 2017-10-12 20:07:40 -0300
+Processing by PlantSectorsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPlantSector Load (0.5ms)[0m  [1m[34mSELECT  "plant_sectors".* FROM "plant_sectors" WHERE "plant_sectors"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mGreenhouse Load (0.2ms)[0m  [1m[34mSELECT  "greenhouses".* FROM "greenhouses" ORDER BY "greenhouses"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  Rendering plant_sectors/edit.html.erb within layouts/application
+  [1m[36mPlant Load (0.2ms)[0m  [1m[34mSELECT "plants".* FROM "plants"[0m
+  Rendered plant_sectors/_form.html.erb (3.1ms)
+  Rendered plant_sectors/edit.html.erb within layouts/application (4.9ms)
+Completed 200 OK in 82ms (Views: 77.2ms | ActiveRecord: 0.9ms)
+
+
+Started PATCH "/greenhouse/plant_sectors/1" for 127.0.0.1 at 2017-10-12 20:07:44 -0300
+Processing by PlantSectorsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"0EjKGNcUcbn9CS8mHQ/m10c3QDGULhIKWxUv7SGBlwjWBdCE9fM39vX8OixoUUa7ZshJ+tp0heP6l2ux5JN4PQ==", "plant_sector"=>{"plant_id"=>"1"}, "commit"=>"Update Plant sector", "id"=>"1"}
+  [1m[36mPlantSector Load (0.2ms)[0m  [1m[34mSELECT  "plant_sectors".* FROM "plant_sectors" WHERE "plant_sectors"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mGreenhouse Load (0.2ms)[0m  [1m[34mSELECT  "greenhouses".* FROM "greenhouses" ORDER BY "greenhouses"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPlant Load (0.2ms)[0m  [1m[34mSELECT  "plants".* FROM "plants" WHERE "plants"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[33mUPDATE "plant_sectors" SET "plant_id" = ?, "updated_at" = ?, "elapsed_time" = ? WHERE "plant_sectors"."id" = ?[0m  [["plant_id", 1], ["updated_at", "2017-10-12 23:07:44.574281"], ["elapsed_time", 0], ["id", 1]]
+  [1m[35m (1.5ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 8ms (ActiveRecord: 2.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-10-12 20:07:44 -0300
+Processing by GreenhousesController#index as HTML
+  [1m[36mGreenhouse Load (0.4ms)[0m  [1m[34mSELECT  "greenhouses".* FROM "greenhouses" ORDER BY "greenhouses"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  Rendering greenhouses/index.html.erb within layouts/application
+  [1m[36mPlantSector Load (0.1ms)[0m  [1m[34mSELECT "plant_sectors".* FROM "plant_sectors" WHERE "plant_sectors"."greenhouse_id" = ?[0m  [["greenhouse_id", 1]]
+  [1m[36mPlant Load (0.1ms)[0m  [1m[34mSELECT  "plants".* FROM "plants" WHERE "plants"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mActionEntry Load (0.1ms)[0m  [1m[34mSELECT "action_entries".* FROM "action_entries"[0m
+  Rendered greenhouses/index.html.erb within layouts/application (4.3ms)
+Completed 200 OK in 72ms (Views: 67.8ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/greenhouse/environment_aging" for 127.0.0.1 at 2017-10-12 20:07:50 -0300
+Processing by XtremeFarmBotController#environment_aging as HTML
+  [1m[36mPlantSector Load (0.4ms)[0m  [1m[34mSELECT "plant_sectors".* FROM "plant_sectors"[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPlant Load (0.2ms)[0m  [1m[34mSELECT  "plants".* FROM "plants" WHERE "plants"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[33mUPDATE "plant_sectors" SET "elapsed_time" = ?, "moisture" = ?, "magnesium" = ?, "potassium" = ?, "iron" = ?, "updated_at" = ? WHERE "plant_sectors"."id" = ?[0m  [["elapsed_time", 1], ["moisture", 1], ["magnesium", 6], ["potassium", 250], ["iron", 43], ["updated_at", "2017-10-12 23:07:50.306856"], ["id", 1]]
+  [1m[35m (1.7ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 10ms (ActiveRecord: 2.7ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-10-12 20:07:50 -0300
+Processing by GreenhousesController#index as HTML
+  [1m[36mGreenhouse Load (0.2ms)[0m  [1m[34mSELECT  "greenhouses".* FROM "greenhouses" ORDER BY "greenhouses"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  Rendering greenhouses/index.html.erb within layouts/application
+  [1m[36mPlantSector Load (0.1ms)[0m  [1m[34mSELECT "plant_sectors".* FROM "plant_sectors" WHERE "plant_sectors"."greenhouse_id" = ?[0m  [["greenhouse_id", 1]]
+  [1m[36mPlant Load (0.1ms)[0m  [1m[34mSELECT  "plants".* FROM "plants" WHERE "plants"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mActionEntry Load (0.2ms)[0m  [1m[34mSELECT "action_entries".* FROM "action_entries"[0m
+  Rendered greenhouses/index.html.erb within layouts/application (4.1ms)
+Completed 200 OK in 76ms (Views: 72.3ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/greenhouse/plant_sectors/1/edit" for 127.0.0.1 at 2017-10-12 20:07:53 -0300
+Processing by PlantSectorsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPlantSector Load (0.3ms)[0m  [1m[34mSELECT  "plant_sectors".* FROM "plant_sectors" WHERE "plant_sectors"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mGreenhouse Load (0.3ms)[0m  [1m[34mSELECT  "greenhouses".* FROM "greenhouses" ORDER BY "greenhouses"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  Rendering plant_sectors/edit.html.erb within layouts/application
+  [1m[36mPlant Load (0.2ms)[0m  [1m[34mSELECT "plants".* FROM "plants"[0m
+  Rendered plant_sectors/_form.html.erb (2.9ms)
+  Rendered plant_sectors/edit.html.erb within layouts/application (4.4ms)
+Completed 200 OK in 77ms (Views: 72.0ms | ActiveRecord: 0.7ms)
+
+
+Started PATCH "/greenhouse/plant_sectors/1" for 127.0.0.1 at 2017-10-12 20:07:56 -0300
+Processing by PlantSectorsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"jjaS2DFXgNSuj5MHbkKuo5C6ncqkesabiHHZhzfYGf2Ie4hEE7DGm6Z6hg0bHA7PsUWUAeogUXIp853b8sr2yA==", "plant_sector"=>{"plant_id"=>"2"}, "commit"=>"Update Plant sector", "id"=>"1"}
+  [1m[36mPlantSector Load (0.2ms)[0m  [1m[34mSELECT  "plant_sectors".* FROM "plant_sectors" WHERE "plant_sectors"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mGreenhouse Load (0.3ms)[0m  [1m[34mSELECT  "greenhouses".* FROM "greenhouses" ORDER BY "greenhouses"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPlant Load (0.2ms)[0m  [1m[34mSELECT  "plants".* FROM "plants" WHERE "plants"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[33mUPDATE "plant_sectors" SET "plant_id" = ?, "updated_at" = ?, "elapsed_time" = ? WHERE "plant_sectors"."id" = ?[0m  [["plant_id", 2], ["updated_at", "2017-10-12 23:07:56.904258"], ["elapsed_time", 0], ["id", 1]]
+  [1m[35m (1.8ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 12ms (ActiveRecord: 3.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-10-12 20:07:56 -0300
+Processing by GreenhousesController#index as HTML
+  [1m[36mGreenhouse Load (0.2ms)[0m  [1m[34mSELECT  "greenhouses".* FROM "greenhouses" ORDER BY "greenhouses"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  Rendering greenhouses/index.html.erb within layouts/application
+  [1m[36mPlantSector Load (0.1ms)[0m  [1m[34mSELECT "plant_sectors".* FROM "plant_sectors" WHERE "plant_sectors"."greenhouse_id" = ?[0m  [["greenhouse_id", 1]]
+  [1m[36mPlant Load (0.1ms)[0m  [1m[34mSELECT  "plants".* FROM "plants" WHERE "plants"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mActionEntry Load (0.1ms)[0m  [1m[34mSELECT "action_entries".* FROM "action_entries"[0m
+  Rendered greenhouses/index.html.erb within layouts/application (3.8ms)
+Completed 200 OK in 70ms (Views: 66.9ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/plants" for 127.0.0.1 at 2017-10-12 20:08:12 -0300
+Processing by PlantsController#index as HTML
+  Rendering plants/index.html.erb within layouts/application
+  [1m[36mPlant Load (0.2ms)[0m  [1m[34mSELECT "plants".* FROM "plants"[0m
+  Rendered plants/index.html.erb within layouts/application (2.7ms)
+Completed 200 OK in 68ms (Views: 65.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/greenhouse/work" for 127.0.0.1 at 2017-10-12 20:08:22 -0300
+Processing by XtremeFarmBotController#work as HTML
+  [1m[36mGreenhouse Load (0.5ms)[0m  [1m[34mSELECT  "greenhouses".* FROM "greenhouses" ORDER BY "greenhouses"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "action_entries" ("description", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["description", "Light Turned On"], ["created_at", "2017-10-12 23:08:22.169455"], ["updated_at", "2017-10-12 23:08:22.169455"]]
+  [1m[35m (1.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "action_entries" ("description", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["description", "Fan Turned On"], ["created_at", "2017-10-12 23:08:22.175047"], ["updated_at", "2017-10-12 23:08:22.175047"]]
+  [1m[35m (1.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "action_entries" ("description", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["description", "Fan Turned Off"], ["created_at", "2017-10-12 23:08:22.283159"], ["updated_at", "2017-10-12 23:08:22.283159"]]
+  [1m[35m (1.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "action_entries" ("description", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["description", "Insecticide Irrigation"], ["created_at", "2017-10-12 23:08:22.291816"], ["updated_at", "2017-10-12 23:08:22.291816"]]
+  [1m[35m (2.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mPlantSector Load (0.3ms)[0m  [1m[34mSELECT "plant_sectors".* FROM "plant_sectors"[0m
+  [1m[36mPlant Load (0.1ms)[0m  [1m[34mSELECT  "plants".* FROM "plants" WHERE "plants"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[33mUPDATE "plant_sectors" SET "moisture" = ?, "updated_at" = ? WHERE "plant_sectors"."id" = ?[0m  [["moisture", 30], ["updated_at", "2017-10-12 23:08:22.302770"], ["id", 1]]
+  [1m[35m (1.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "action_entries" ("description", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["description", "Water Irrigation"], ["created_at", "2017-10-12 23:08:22.306651"], ["updated_at", "2017-10-12 23:08:22.306651"]]
+  [1m[35m (1.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[33mUPDATE "plant_sectors" SET "updated_at" = ?, "magnesium" = ? WHERE "plant_sectors"."id" = ?[0m  [["updated_at", "2017-10-12 23:08:22.312209"], ["magnesium", 300], ["id", 1]]
+  [1m[35m (1.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[33mUPDATE "plant_sectors" SET "updated_at" = ?, "potassium" = ? WHERE "plant_sectors"."id" = ?[0m  [["updated_at", "2017-10-12 23:08:22.316182"], ["potassium", 300], ["id", 1]]
+  [1m[35m (1.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[33mUPDATE "plant_sectors" SET "updated_at" = ?, "iron" = ? WHERE "plant_sectors"."id" = ?[0m  [["updated_at", "2017-10-12 23:08:22.320242"], ["iron", 300], ["id", 1]]
+  [1m[35m (1.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "action_entries" ("description", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["description", "Nutrients Irrigation"], ["created_at", "2017-10-12 23:08:22.324235"], ["updated_at", "2017-10-12 23:08:22.324235"]]
+  [1m[35m (1.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "plant_sectors"[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "action_entries" ("description", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["description", "Temperature Raised"], ["created_at", "2017-10-12 23:08:22.330226"], ["updated_at", "2017-10-12 23:08:22.330226"]]
+  [1m[35m (1.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "plant_sectors"[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "action_entries" ("description", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["description", "Humidification"], ["created_at", "2017-10-12 23:08:22.335791"], ["updated_at", "2017-10-12 23:08:22.335791"]]
+  [1m[35m (1.9ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 179ms (ActiveRecord: 27.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-10-12 20:08:22 -0300
+Processing by GreenhousesController#index as HTML
+  [1m[36mGreenhouse Load (0.2ms)[0m  [1m[34mSELECT  "greenhouses".* FROM "greenhouses" ORDER BY "greenhouses"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  Rendering greenhouses/index.html.erb within layouts/application
+  [1m[36mPlantSector Load (0.1ms)[0m  [1m[34mSELECT "plant_sectors".* FROM "plant_sectors" WHERE "plant_sectors"."greenhouse_id" = ?[0m  [["greenhouse_id", 1]]
+  [1m[36mPlant Load (0.1ms)[0m  [1m[34mSELECT  "plants".* FROM "plants" WHERE "plants"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mActionEntry Load (0.2ms)[0m  [1m[34mSELECT "action_entries".* FROM "action_entries"[0m
+  Rendered greenhouses/index.html.erb within layouts/application (4.6ms)
+Completed 200 OK in 70ms (Views: 66.8ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/greenhouse/environment_aging" for 127.0.0.1 at 2017-10-12 20:08:26 -0300
+Processing by XtremeFarmBotController#environment_aging as HTML
+  [1m[36mPlantSector Load (0.3ms)[0m  [1m[34mSELECT "plant_sectors".* FROM "plant_sectors"[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPlant Load (0.1ms)[0m  [1m[34mSELECT  "plants".* FROM "plants" WHERE "plants"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[33mUPDATE "plant_sectors" SET "elapsed_time" = ?, "moisture" = ?, "magnesium" = ?, "potassium" = ?, "iron" = ?, "updated_at" = ? WHERE "plant_sectors"."id" = ?[0m  [["elapsed_time", 1], ["moisture", 11], ["magnesium", 231], ["potassium", 222], ["iron", 177], ["updated_at", "2017-10-12 23:08:26.171239"], ["id", 1]]
+  [1m[35m (1.7ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 9ms (ActiveRecord: 2.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-10-12 20:08:26 -0300
+Processing by GreenhousesController#index as HTML
+  [1m[36mGreenhouse Load (0.2ms)[0m  [1m[34mSELECT  "greenhouses".* FROM "greenhouses" ORDER BY "greenhouses"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  Rendering greenhouses/index.html.erb within layouts/application
+  [1m[36mPlantSector Load (0.1ms)[0m  [1m[34mSELECT "plant_sectors".* FROM "plant_sectors" WHERE "plant_sectors"."greenhouse_id" = ?[0m  [["greenhouse_id", 1]]
+  [1m[36mPlant Load (0.1ms)[0m  [1m[34mSELECT  "plants".* FROM "plants" WHERE "plants"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mActionEntry Load (0.2ms)[0m  [1m[34mSELECT "action_entries".* FROM "action_entries"[0m
+  Rendered greenhouses/index.html.erb within layouts/application (5.0ms)
+Completed 200 OK in 84ms (Views: 80.8ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/greenhouse/work" for 127.0.0.1 at 2017-10-12 20:08:29 -0300
+Processing by XtremeFarmBotController#work as HTML
+  [1m[36mGreenhouse Load (0.4ms)[0m  [1m[34mSELECT  "greenhouses".* FROM "greenhouses" ORDER BY "greenhouses"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "action_entries" ("description", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["description", "Light Turned On"], ["created_at", "2017-10-12 23:08:29.453451"], ["updated_at", "2017-10-12 23:08:29.453451"]]
+  [1m[35m (1.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "action_entries" ("description", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["description", "Fan Turned On"], ["created_at", "2017-10-12 23:08:29.457448"], ["updated_at", "2017-10-12 23:08:29.457448"]]
+  [1m[35m (1.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "action_entries" ("description", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["description", "Fan Turned Off"], ["created_at", "2017-10-12 23:08:29.564191"], ["updated_at", "2017-10-12 23:08:29.564191"]]
+  [1m[35m (1.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "action_entries" ("description", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["description", "Insecticide Irrigation"], ["created_at", "2017-10-12 23:08:29.576538"], ["updated_at", "2017-10-12 23:08:29.576538"]]
+  [1m[35m (1.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mPlantSector Load (0.2ms)[0m  [1m[34mSELECT "plant_sectors".* FROM "plant_sectors"[0m
+  [1m[36mPlant Load (0.2ms)[0m  [1m[34mSELECT  "plants".* FROM "plants" WHERE "plants"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[33mUPDATE "plant_sectors" SET "moisture" = ?, "updated_at" = ? WHERE "plant_sectors"."id" = ?[0m  [["moisture", 30], ["updated_at", "2017-10-12 23:08:29.584555"], ["id", 1]]
+  [1m[35m (1.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "action_entries" ("description", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["description", "Water Irrigation"], ["created_at", "2017-10-12 23:08:29.588384"], ["updated_at", "2017-10-12 23:08:29.588384"]]
+  [1m[35m (1.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[33mUPDATE "plant_sectors" SET "updated_at" = ?, "magnesium" = ? WHERE "plant_sectors"."id" = ?[0m  [["updated_at", "2017-10-12 23:08:29.592876"], ["magnesium", 300], ["id", 1]]
+  [1m[35m (1.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[33mUPDATE "plant_sectors" SET "updated_at" = ?, "potassium" = ? WHERE "plant_sectors"."id" = ?[0m  [["updated_at", "2017-10-12 23:08:29.596241"], ["potassium", 300], ["id", 1]]
+  [1m[35m (1.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[33mUPDATE "plant_sectors" SET "updated_at" = ?, "iron" = ? WHERE "plant_sectors"."id" = ?[0m  [["updated_at", "2017-10-12 23:08:29.600104"], ["iron", 300], ["id", 1]]
+  [1m[35m (1.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "action_entries" ("description", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["description", "Nutrients Irrigation"], ["created_at", "2017-10-12 23:08:29.603566"], ["updated_at", "2017-10-12 23:08:29.603566"]]
+  [1m[35m (1.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "plant_sectors"[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "action_entries" ("description", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["description", "Temperature Raised"], ["created_at", "2017-10-12 23:08:29.607615"], ["updated_at", "2017-10-12 23:08:29.607615"]]
+  [1m[35m (1.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "plant_sectors"[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "action_entries" ("description", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["description", "Humidification"], ["created_at", "2017-10-12 23:08:29.611656"], ["updated_at", "2017-10-12 23:08:29.611656"]]
+  [1m[35m (1.9ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 167ms (ActiveRecord: 27.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-10-12 20:08:29 -0300
+Processing by GreenhousesController#index as HTML
+  [1m[36mGreenhouse Load (0.2ms)[0m  [1m[34mSELECT  "greenhouses".* FROM "greenhouses" ORDER BY "greenhouses"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  Rendering greenhouses/index.html.erb within layouts/application
+  [1m[36mPlantSector Load (0.1ms)[0m  [1m[34mSELECT "plant_sectors".* FROM "plant_sectors" WHERE "plant_sectors"."greenhouse_id" = ?[0m  [["greenhouse_id", 1]]
+  [1m[36mPlant Load (0.1ms)[0m  [1m[34mSELECT  "plants".* FROM "plants" WHERE "plants"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mActionEntry Load (0.2ms)[0m  [1m[34mSELECT "action_entries".* FROM "action_entries"[0m
+  Rendered greenhouses/index.html.erb within layouts/application (5.0ms)
+Completed 200 OK in 77ms (Views: 74.5ms | ActiveRecord: 0.6ms)
+
+

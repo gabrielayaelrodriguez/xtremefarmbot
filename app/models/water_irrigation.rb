@@ -3,6 +3,6 @@ class WaterIrrigation
 	def self.irrigate(sector, num)
 		WaterPipe.open(sector, num)
 		#logear
-		Notification.notify("water irrigation")
+		Notification.notify("Water Irrigation")
 	end
 end

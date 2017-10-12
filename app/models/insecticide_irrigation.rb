@@ -3,7 +3,7 @@ class InsecticideIrrigation
 	def self.irrigate
 		InsecticidePipe.open()
 		#logear
-		Notification.notify("insecticide irrigation")
+		Notification.notify("Insecticide Irrigation")
 	end
 
 end

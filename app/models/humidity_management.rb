@@ -2,7 +2,7 @@ class HumidityManagement
 
 	def self.humidify(num)
 		HumidityControl.activate(num)
-		Notification.notify("pssss")
+		Notification.notify("Humidification")
 	end
 
 end

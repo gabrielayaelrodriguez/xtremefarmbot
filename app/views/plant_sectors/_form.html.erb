@@ -10,17 +10,13 @@
       </ul>
     </div>
 
-
-    
-
   <% end %>
 
   <h4>Sector is going to take care of:</h4>
 
     <%= form.select :plant_id, Plant.all.collect { |p| [ p.name, p.id ] }, {}, class: 'browser-default' %>
-    <%= link_to 'Add New Plant Type', new_plant_path %>
-    <br>
-
+  <%= link_to 'Add New Plant Type', new_plant_path %>
+  <br><br>
 
   <div class="actions">
     <%= form.submit %>

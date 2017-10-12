@@ -9,14 +9,25 @@
 
 Greenhouse.create
 Plant.create(
-				name: 'lechu', 
+				name: 'Lechuga', 
 				soil_moisture: 40,
 				magnesium: 500,
 				potassium: 500,
 				iron: 500,
 				temperature: 40,
 				humidity: 40,
-				hours_of_light: 40,
+				hours_of_light: 10,
 				growth_time: 40
 			)
 
+Plant.create(
+				name: 'Espinaca', 
+				soil_moisture: 30,
+				magnesium: 300,
+				potassium: 300,
+				iron: 300,
+				temperature: 30,
+				humidity: 50,
+				hours_of_light: 10,
+				growth_time: 20
+			)
